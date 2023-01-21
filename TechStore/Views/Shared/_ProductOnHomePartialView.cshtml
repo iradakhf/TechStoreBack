@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Product>
+
+@foreach (Product item in Model)
+{
+
+            <div id="product1" class="col-lg-3 col-xxl-3 col-xl-3 col-md-6 col-sm-6 col-12">
+                <div class="imageAndTextBox">
+                    <div class="productBoxesSectionSliderForSingleProduct1">
+                        <div class="box">
+                            <img src="assets/images/product/02.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="textPart">
+                        <div class="title d-flex justify-content-center">
+                            <span>-</span>
+                            <div class="text">
+                                Laptop
+                            </div>
+                        </div>
+                        <div class="productDescription">
+                            <a href="shop.html">Apple iPad Mini <br> G2356</a>
+                        </div>
+                        <div class="priceSection d-flex">
+                            <div class="discount">
+                                $1,255.00
+                            </div>
+                            <div class="sale">
+                                <del>
+                                    $2,999.11
+                                </del>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="onHoverBasketCompareWishList">
+                        <div class="top">
+                            <button><img src="~/assets/images/cart.png" alt=""> <span>Add to Cart</span></button>
+                        </div>
+                        <div class="bottom">
+                            <div class="left">
+                                <a href="compare.html"><img src="assets/images/compare.png" alt=""> Compare</a>
+                            </div>
+                            <div class="right">
+                                <a href="wishlist.html"><img src="assets/images/wishlist.png" alt=""> Wishlist</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+}
+
