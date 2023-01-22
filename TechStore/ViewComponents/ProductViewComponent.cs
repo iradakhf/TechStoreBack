@@ -21,9 +21,9 @@ namespace TechStore.ViewComponents
         {
             ProductVM productVM = new ProductVM
             {
-                NewArrivals = await _context.Products.Where(c => c.IsDeleted == false && c.IsNewArrival).ToListAsync(),
-                BestSellers = await _context.Products.Where(c => c.IsDeleted == false && c.IsBestSeller).ToListAsync(),
-                Featured = await _context.Products.Where(c => c.IsDeleted == false && c.IsFeatured).ToListAsync()
+                NewArrivals = await _context.Products.Include(p=>p.Category).Where(c => c.IsDeleted == false && c.IsNewArrival).ToListAsync(),
+                BestSellers = await _context.Products.Include(p => p.Category).Where(c => c.IsDeleted == false && c.IsBestSeller).ToListAsync(),
+                Featured = await _context.Products.Include(p => p.Category).Where(c => c.IsDeleted == false && c.IsFeatured).ToListAsync()
             };
 
             return View(await Task.FromResult(productVM));

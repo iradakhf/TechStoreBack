@@ -7,6 +7,20 @@
   <ItemGroup>
     <Compile Remove="Migrations\20230121173806_TEST.cs" />
     <Compile Remove="Migrations\20230121173806_TEST.Designer.cs" />
+    <Compile Remove="Migrations\20230122100549_CreatedCategoryTable.cs" />
+    <Compile Remove="Migrations\20230122100549_CreatedCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230122101200_AddedRelationBetweenCategoryAndProduct.cs" />
+    <Compile Remove="Migrations\20230122101200_AddedRelationBetweenCategoryAndProduct.Designer.cs" />
+    <Compile Remove="Migrations\20230122185031_addedOneToManyToSpecialOfferAndProduct.cs" />
+    <Compile Remove="Migrations\20230122185031_addedOneToManyToSpecialOfferAndProduct.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\css\bootstrap.css.map" />
+    <None Include="wwwroot\assets\css\style.css.map" />
+    <None Include="wwwroot\assets\css\style.scss" />
+    <None Include="wwwroot\assets\css\_media.scss" />
+    <None Include="wwwroot\assets\css\_reset.scss" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,6 +30,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\assets\images\specialOffer\l01.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

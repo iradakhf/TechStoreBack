@@ -83,3 +83,7 @@ C:\Users\irade\source\repos\TechStore\TechStore\bin\Debug\netcoreapp3.1\runtimes
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\TechStore.Views.pdb
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\TechStore.csproj.CopyComplete
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\TechStore.genruntimeconfig.cache
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\OurProduct\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\ProductTab\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductTabPartialView.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\SpecialOffer\Default.cshtml.g.cs

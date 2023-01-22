@@ -13,6 +13,10 @@ namespace TechStore.Models
         [Required]
         public string Name { get; set; }
 
+        [StringLength(500)]
+        [Required]
+        public string infoText { get; set; }
+
         [Column(TypeName = "money")]
         [Required]
         public double Price { get; set; }
@@ -29,11 +33,11 @@ namespace TechStore.Models
 
         [StringLength(1000)]
         [Required]
-        public string Description { get; set; }
-
-        [StringLength(1000)]
-        [Required]
         public string MainImage { get; set; }
+
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+
 
 
         public bool IsNewArrival { get; set; }

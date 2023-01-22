@@ -1,5 +1,11 @@
 
 $(document).ready(function () {
+    $("#categories .productPart").css("display", "block");
+    $("#categories .productTab ul #smartphonesOnCG").click(function (e) {
+        e.preventDefault();
+        $("#categories .productPart").css("display", "block");
+    });
+  
     if ($("productBoxNewArrival").css("display") == "block")
     {
         $(".productBoxFeatured").css("display", "none");
@@ -185,12 +191,14 @@ $(document).ready(function () {
     $(".bottomForMobileGeneral a").click(function (e) {
         e.preventDefault();
     })
+   
     $("#productBoxNewArrival").click(function (e) {
         e.preventDefault();
         $(".productBoxNewArrival").css("display", "block")
         $(".productBoxFeatured").css("display", "none");
         $(".productBoxTopSelling").css("display", "none");
     })
+
     $("#productBoxFeatured").click(function (e) {
         e.preventDefault();
         $(".productBoxNewArrival").css("display", "none")

@@ -1,32 +1,32 @@
 ﻿@model IEnumerable<Product>
 
-@foreach (Product item in Model)
+@foreach (Product item in Model.Take(8))
 {
 
             <div id="product1" class="col-lg-3 col-xxl-3 col-xl-3 col-md-6 col-sm-6 col-12">
                 <div class="imageAndTextBox">
                     <div class="productBoxesSectionSliderForSingleProduct1">
                         <div class="box">
-                            <img src="assets/images/product/02.jpg" alt="">
+                            <img width="100%" src="assets/images/product/@item.MainImage" alt="">
                         </div>
                     </div>
                     <div class="textPart">
                         <div class="title d-flex justify-content-center">
                             <span>-</span>
                             <div class="text">
-                                Laptop
+                                @item.Category.Name
                             </div>
                         </div>
                         <div class="productDescription">
-                            <a href="shop.html">Apple iPad Mini <br> G2356</a>
+                            <a href="shop.html">@item.Name</a>
                         </div>
                         <div class="priceSection d-flex">
                             <div class="discount">
-                                $1,255.00
+                                $@item.Price
                             </div>
                             <div class="sale">
                                 <del>
-                                    $2,999.11
+                                    $@item.DiscountedPrice
                                 </del>
                             </div>
                         </div>
