@@ -85,5 +85,12 @@ C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\TechStor
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\TechStore.genruntimeconfig.cache
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\OurProduct\Default.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\ProductTab\Default.cshtml.g.cs
-C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductTabPartialView.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\SpecialOffer\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Highlight\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\PaymentMethod\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\BestSellerSingle\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Category\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Brand\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Color\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\BestSellerOnSide\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\ShopBanner\Default.cshtml.g.cs

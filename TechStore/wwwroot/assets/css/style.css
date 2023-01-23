@@ -2354,16 +2354,17 @@ body main #categories .categoryGeneral .productTab {
   border-bottom: 1px solid rgba(101, 101, 101, 0.3);
   padding: 1.3rem 0rem;
 }
-body main #categories .categoryGeneral .productTab ul li {
+body main #categories .categoryGeneral .productTab ul li button {
   margin-right: 10px;
   padding: 10px 20px;
   font-size: 18px;
   font-family: "Nunito", sans-serif;
   font-weight: 300;
   color: rgba(145, 145, 145, 0.8);
+  border: none;
+  background-color: white;
 }
 body main #categories .categoryGeneral .productPart {
-  display: none;
   padding: 0rem 1.5rem;
 }
 body main #categories .categoryGeneral .productPart .imageAndTextBox {
@@ -3001,6 +3002,7 @@ body main #highlights .box {
   display: flex;
   align-items: center;
   margin-top: 20px;
+  padding: 2rem 0;
 }
 body main #highlights .box img {
   width: 100%;

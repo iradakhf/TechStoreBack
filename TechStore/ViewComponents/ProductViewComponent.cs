@@ -25,7 +25,10 @@ namespace TechStore.ViewComponents
                 BestSellers = await _context.Products.Include(p => p.Category).Where(c => c.IsDeleted == false && c.IsBestSeller).ToListAsync(),
                 Featured = await _context.Products.Include(p => p.Category).Where(c => c.IsDeleted == false && c.IsFeatured).ToListAsync()
             };
-
+            if (productVM == null)
+            {
+                return View("Not Found");
+            }
             return View(await Task.FromResult(productVM));
         }
     }

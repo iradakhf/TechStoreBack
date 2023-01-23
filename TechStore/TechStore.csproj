@@ -13,6 +13,12 @@
     <Compile Remove="Migrations\20230122101200_AddedRelationBetweenCategoryAndProduct.Designer.cs" />
     <Compile Remove="Migrations\20230122185031_addedOneToManyToSpecialOfferAndProduct.cs" />
     <Compile Remove="Migrations\20230122185031_addedOneToManyToSpecialOfferAndProduct.Designer.cs" />
+    <Compile Remove="Migrations\20230123155541_CreatedBrandTaable.cs" />
+    <Compile Remove="Migrations\20230123155541_CreatedBrandTaable.Designer.cs" />
+    <Compile Remove="Migrations\20230123181854_AddOneToManyRelationToProductAndColor.cs" />
+    <Compile Remove="Migrations\20230123181854_AddOneToManyRelationToProductAndColor.Designer.cs" />
+    <Compile Remove="Migrations\20230123182007_AddOneToManyRelationToProductAndColor.cs" />
+    <Compile Remove="Migrations\20230123182007_AddOneToManyRelationToProductAndColor.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

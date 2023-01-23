@@ -21,6 +21,10 @@ namespace TechStore.ViewComponents
         {
 
             IEnumerable<SpecialOffer> SpecialOffers = await _context.SpecialOffers.Include(so=>so.Product).Where(so => so.IsDeleted == false).ToListAsync();
+            if (SpecialOffers == null && SpecialOffers.Count() < 0)
+            {
+                return View("Not Found");
+            }
             return View(await Task.FromResult(SpecialOffers));
 
         }

@@ -37,9 +37,8 @@ namespace TechStore.Models
 
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-
-
-
+        public Nullable<int> BrandId { get; set; }
+        public Brand Brand { get; set; }
         public bool IsNewArrival { get; set; }
         public bool IsBestSeller { get; set; }
         public bool IsFeatured { get; set; }

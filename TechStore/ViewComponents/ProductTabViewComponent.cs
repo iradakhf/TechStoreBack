@@ -20,13 +20,13 @@ namespace TechStore.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            ProductVM productVM = new ProductVM
-            {
-                Products = await _context.Products.Include(p => p.Category).Where(c => c.IsDeleted == false).ToListAsync(),
-                Categories = await _context.Categories.Where(c => c.IsDeleted == false && c.ParentId==null).ToListAsync()
 
-            };
-            return View(await Task.FromResult(productVM));
+            IEnumerable<Product> products = await _context.Products.Include(p => p.Category).Where(c => c.IsDeleted == false).ToListAsync();
+            if (products == null && products.Count() < 0)
+            {
+                return View("Not Found");
+            }
+            return View(await Task.FromResult(products));
         }
 
 

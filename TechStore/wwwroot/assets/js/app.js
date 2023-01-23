@@ -1,16 +1,9 @@
 
+
 $(document).ready(function () {
-    $("#categories .productPart").css("display", "block");
-    $("#categories .productTab ul #smartphonesOnCG").click(function (e) {
-        e.preventDefault();
-        $("#categories .productPart").css("display", "block");
-    });
-  
-    if ($("productBoxNewArrival").css("display") == "block")
-    {
-        $(".productBoxFeatured").css("display", "none");
-        $(".productBoxTopSelling").css("display", "none");
-    }
+
+    $("#categories .productPart").css("display", "none");
+    $("#categories #Smart").css("display", "block");
 
     $('.mainSliderSection').slick({
         dots: true,
@@ -191,14 +184,12 @@ $(document).ready(function () {
     $(".bottomForMobileGeneral a").click(function (e) {
         e.preventDefault();
     })
-   
     $("#productBoxNewArrival").click(function (e) {
         e.preventDefault();
         $(".productBoxNewArrival").css("display", "block")
         $(".productBoxFeatured").css("display", "none");
         $(".productBoxTopSelling").css("display", "none");
     })
-
     $("#productBoxFeatured").click(function (e) {
         e.preventDefault();
         $(".productBoxNewArrival").css("display", "none")
@@ -554,19 +545,30 @@ var x = setInterval(function () {
     document.querySelector(".Hour").innerHTML = hours;
     document.querySelector(".Min").innerHTML = minutes;
     document.querySelector(".Sec").innerHTML = seconds;
-
-    document.querySelector(".DAY2").innerHTML = days;
-    document.querySelector(".Hour2").innerHTML = hours;
-    document.querySelector(".Min2").innerHTML = minutes;
-    document.querySelector(".Sec2").innerHTML = seconds;
-
-    document.querySelector(".DAY3").innerHTML = days;
-    document.querySelector(".Hour3").innerHTML = hours;
-    document.querySelector(".Min3").innerHTML = minutes;
-    document.querySelector(".Sec3").innerHTML = seconds;
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("demo").innerHTML = "EXPIRED";
     }
 }, 1000);
+
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
