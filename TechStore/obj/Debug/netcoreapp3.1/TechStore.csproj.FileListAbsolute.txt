@@ -94,3 +94,7 @@ C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Color\Default.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\BestSellerOnSide\Default.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\ShopBanner\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\irade\source\repos\TechStore\TechStore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\irade\source\repos\TechStore\TechStore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketCartPartial.cshtml.g.cs

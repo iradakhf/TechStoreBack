@@ -1,8 +1,16 @@
 ﻿@inject ILayoutService  layoutservices
 
 @{
-    IDictionary<string, string> settings = await layoutservices.GetSettings();
-            }
+    Dictionary<string, string> settings = await layoutservices.GetSettingsAsync();
+    IEnumerable<Category> categories = await layoutservices.GetCategoriesAsync();
+    IEnumerable<BasketVM> basketVMs = await layoutservices.GetBasketVMsAsync();
+    HeaderVM headerVM = new HeaderVM
+    {
+        BasketVMs = basketVMs,
+        Categories = categories,
+        Settings = settings
+    };
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,13 +25,14 @@
 </head>
 <body>
     <!-- Header Section -->
-    @(await Component.InvokeAsync("Header", settings))
+    @(await Component.InvokeAsync("Header", headerVM))
     @RenderBody()
     <!-- Footer Section -->
     @(await Component.InvokeAsync("Footer",settings) )
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="~/assets/js/app.js"></script>
+    <script src="~/assets/js/custom.js"></script>
     <script src="~/assets/js/about.js"></script>
     <script src="~/assets/js/shop.js"></script>
     <script src="~/assets/js/brand.js"></script>

@@ -2173,7 +2173,7 @@ body main #productBoxesNewArrivalFeaturedTopSelling .productBoxesNewArrivalFeatu
   display: flex;
   justify-content: center;
 }
-body main #productBoxesNewArrivalFeaturedTopSelling .productBoxesNewArrivalFeaturedTopSellingGeneral .productBox .imageAndTextBox .onHoverBasketCompareWishList .top button {
+body main #productBoxesNewArrivalFeaturedTopSelling .productBoxesNewArrivalFeaturedTopSellingGeneral .productBox .imageAndTextBox .onHoverBasketCompareWishList .top a {
   background-color: rgb(249, 36, 0);
   border: 1px solid rgb(249, 36, 0);
   border-radius: 30px;
@@ -2183,11 +2183,11 @@ body main #productBoxesNewArrivalFeaturedTopSelling .productBoxesNewArrivalFeatu
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
 }
-body main #productBoxesNewArrivalFeaturedTopSelling .productBoxesNewArrivalFeaturedTopSellingGeneral .productBox .imageAndTextBox .onHoverBasketCompareWishList .top button:hover {
+body main #productBoxesNewArrivalFeaturedTopSelling .productBoxesNewArrivalFeaturedTopSellingGeneral .productBox .imageAndTextBox .onHoverBasketCompareWishList .top a:hover {
   background-color: rgb(242, 139, 0);
   border-color: rgb(242, 139, 0);
 }
-body main #productBoxesNewArrivalFeaturedTopSelling .productBoxesNewArrivalFeaturedTopSellingGeneral .productBox .imageAndTextBox .onHoverBasketCompareWishList .top button span {
+body main #productBoxesNewArrivalFeaturedTopSelling .productBoxesNewArrivalFeaturedTopSellingGeneral .productBox .imageAndTextBox .onHoverBasketCompareWishList .top a span {
   color: white;
   padding-left: 1rem;
 }
@@ -2447,7 +2447,7 @@ body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBas
   display: flex;
   justify-content: center;
 }
-body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBasketCompareWishList .top button {
+body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBasketCompareWishList .top a {
   background-color: rgb(249, 36, 0);
   border: 1px solid rgb(249, 36, 0);
   border-radius: 30px;
@@ -2457,11 +2457,11 @@ body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBas
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
 }
-body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBasketCompareWishList .top button:hover {
+body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBasketCompareWishList .top a:hover {
   background-color: rgb(242, 139, 0);
   border-color: rgb(242, 139, 0);
 }
-body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBasketCompareWishList .top button span {
+body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBasketCompareWishList .top a span {
   color: white;
   padding-left: 1rem;
 }
@@ -2503,7 +2503,7 @@ body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBas
   display: flex;
   justify-content: center;
 }
-body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBasketCompareWishListRight .top button {
+body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBasketCompareWishListRight .top a {
   background-color: rgb(249, 36, 0);
   border: 1px solid rgb(249, 36, 0);
   border-radius: 30px;
@@ -2513,11 +2513,11 @@ body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBas
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
 }
-body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBasketCompareWishListRight .top button:hover {
+body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBasketCompareWishListRight .top a:hover {
   background-color: rgb(242, 139, 0);
   border-color: rgb(242, 139, 0);
 }
-body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBasketCompareWishListRight .top button span {
+body main #categories .categoryGeneral .productPart .imageAndTextBox .onHoverBasketCompareWishListRight .top a span {
   color: white;
   padding-left: 1rem;
 }
@@ -2636,7 +2636,7 @@ body main #categories .categoryGeneral .productPart .imageAndTextBoxLeft .onHove
   display: flex;
   justify-content: center;
 }
-body main #categories .categoryGeneral .productPart .imageAndTextBoxLeft .onHoverBasketCompareWishListRight .top button {
+body main #categories .categoryGeneral .productPart .imageAndTextBoxLeft .onHoverBasketCompareWishListRight .top a {
   background-color: rgb(249, 36, 0);
   border: 1px solid rgb(249, 36, 0);
   border-radius: 30px;
@@ -2646,11 +2646,11 @@ body main #categories .categoryGeneral .productPart .imageAndTextBoxLeft .onHove
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
 }
-body main #categories .categoryGeneral .productPart .imageAndTextBoxLeft .onHoverBasketCompareWishListRight .top button:hover {
+body main #categories .categoryGeneral .productPart .imageAndTextBoxLeft .onHoverBasketCompareWishListRight .top a:hover {
   background-color: rgb(242, 139, 0);
   border-color: rgb(242, 139, 0);
 }
-body main #categories .categoryGeneral .productPart .imageAndTextBoxLeft .onHoverBasketCompareWishListRight .top button span {
+body main #categories .categoryGeneral .productPart .imageAndTextBoxLeft .onHoverBasketCompareWishListRight .top a span {
   color: white;
   padding-left: 1rem;
 }
@@ -3002,7 +3002,7 @@ body main #highlights .box {
   display: flex;
   align-items: center;
   margin-top: 20px;
-  padding: 2rem 0;
+  margin-bottom: 30px;
 }
 body main #highlights .box img {
   width: 100%;
@@ -3782,7 +3782,7 @@ body footer .bottom p {
   display: flex;
   justify-content: center;
 }
-#shopMain #SortProduct .productBox .imageAndTextBox .onHoverBasketCompareWishList .top button {
+#shopMain #SortProduct .productBox .imageAndTextBox .onHoverBasketCompareWishList .top a {
   background-color: rgb(249, 36, 0);
   border: 1px solid rgb(249, 36, 0);
   border-radius: 30px;
@@ -3792,11 +3792,11 @@ body footer .bottom p {
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
 }
-#shopMain #SortProduct .productBox .imageAndTextBox .onHoverBasketCompareWishList .top button:hover {
+#shopMain #SortProduct .productBox .imageAndTextBox .onHoverBasketCompareWishList .top a:hover {
   background-color: rgb(242, 139, 0);
   border-color: rgb(242, 139, 0);
 }
-#shopMain #SortProduct .productBox .imageAndTextBox .onHoverBasketCompareWishList .top button span {
+#shopMain #SortProduct .productBox .imageAndTextBox .onHoverBasketCompareWishList .top a span {
   color: white;
   padding-left: 1rem;
 }

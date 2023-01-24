@@ -47,8 +47,22 @@ using TechStore.ViewComponentModels.ShopV;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 8 "C:\Users\irade\source\repos\TechStore\TechStore\Views\_ViewImports.cshtml"
+using TechStore.ViewModels.Basket;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "C:\Users\irade\source\repos\TechStore\TechStore\Views\_ViewImports.cshtml"
+using TechStore.ViewComponentModels.HeaderV;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b9", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ca736876ee4d341a357610ac41b98f777ee21d30", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"efd64f3e26eeecfbfb59b834d6670ef3e4ea61ad", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/assets/images/popup.png"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -111,7 +125,7 @@ using TechStore.ViewComponentModels.ShopV;
                             <i class=""fa-solid fa-arrow-right-long""></i>
                     ");
             WriteLiteral("    </div>\r\n                        <input type=\"checkbox\"> <span>Dont show this popup again</span>\r\n                    </div>\r\n                    <div class=\"col-lg-6 col-xl-6 col-xxl-6 col-6 col-sm-6 col-md-6\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b97028", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b97418", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -182,7 +196,7 @@ using TechStore.ViewComponentModels.ShopV;
                 <div class=""productBox row justify-content-between"">
                     <div class=""imageAndTextBox col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 "">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b910715", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b911105", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -205,7 +219,7 @@ using TechStore.ViewComponentModels.ShopV;
                             </div>
                             <div class=""productDescription"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b912229", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b912619", async() => {
                 WriteLiteral("Apple iPad Mini <br> G2356");
             }
             );
@@ -239,7 +253,7 @@ using TechStore.ViewComponentModels.ShopV;
                     </div>
                     <div class=""imageAndTextBox col-xxl-2 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 "">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b914316", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b914706", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -262,7 +276,7 @@ using TechStore.ViewComponentModels.ShopV;
                             </div>
                             <div class=""productDescription"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b915830", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b916220", async() => {
                 WriteLiteral("Apple iPad Mini <br> G2356");
             }
             );
@@ -296,7 +310,7 @@ using TechStore.ViewComponentModels.ShopV;
                     </div>
                     <div class=""imageAndTextBox col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 "">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b917917", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b918307", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -319,7 +333,7 @@ using TechStore.ViewComponentModels.ShopV;
                             </div>
                             <div class=""productDescription"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b919431", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b919821", async() => {
                 WriteLiteral("Apple iPad Mini <br> G2356");
             }
             );
@@ -353,7 +367,7 @@ using TechStore.ViewComponentModels.ShopV;
                     </div>
                     <div class=""imageAndTextBox col-xxl-2 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 "">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b921518", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b921908", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -376,7 +390,7 @@ using TechStore.ViewComponentModels.ShopV;
                             </div>
                             <div class=""productDescription"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b923032", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b923422", async() => {
                 WriteLiteral("Apple iPad Mini <br> G2356");
             }
             );
@@ -410,7 +424,7 @@ using TechStore.ViewComponentModels.ShopV;
                     </div>
                     <div class=""imageAndTextBox col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 "">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b925119", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b925509", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -433,7 +447,7 @@ using TechStore.ViewComponentModels.ShopV;
                             </div>
                             <div class=""productDescription"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b926633", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b927023", async() => {
                 WriteLiteral("Apple iPad Mini <br> G2356");
             }
             );
@@ -467,7 +481,7 @@ using TechStore.ViewComponentModels.ShopV;
                     </div>
                     <div class=""imageAndTextBox col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 "">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b928720", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b929110", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -490,7 +504,7 @@ using TechStore.ViewComponentModels.ShopV;
                             </div>
                             <div class=""productDescription"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b930234", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b930624", async() => {
                 WriteLiteral("Apple iPad Mini <br> G2356");
             }
             );
@@ -524,7 +538,7 @@ using TechStore.ViewComponentModels.ShopV;
                     </div>
                     <div class=""imageAndTextBox col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 "">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b932321", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b932711", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -547,7 +561,7 @@ using TechStore.ViewComponentModels.ShopV;
                             </div>
                             <div class=""productDescription"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b933835", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b934225", async() => {
                 WriteLiteral("Apple iPad Mini <br> G2356");
             }
             );
@@ -581,7 +595,7 @@ using TechStore.ViewComponentModels.ShopV;
                     </div>
                     <div class=""imageAndTextBox col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 "">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b935922", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b936312", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -604,7 +618,7 @@ using TechStore.ViewComponentModels.ShopV;
                             </div>
                             <div class=""productDescription"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b937436", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b937826", async() => {
                 WriteLiteral("Apple iPad Mini <br> G2356");
             }
             );
@@ -638,7 +652,7 @@ using TechStore.ViewComponentModels.ShopV;
                     </div>
                     <div class=""imageAndTextBox col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 "">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b939523", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b939913", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -661,7 +675,7 @@ using TechStore.ViewComponentModels.ShopV;
                             </div>
                             <div class=""productDescription"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b941037", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b941427", async() => {
                 WriteLiteral("Apple iPad Mini <br> G2356");
             }
             );
@@ -695,7 +709,7 @@ using TechStore.ViewComponentModels.ShopV;
                     </div>
                     <div class=""imageAndTextBox col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 "">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b943124", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b943514", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -718,7 +732,7 @@ using TechStore.ViewComponentModels.ShopV;
                             </div>
                             <div class=""productDescription"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b944638", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b945028", async() => {
                 WriteLiteral("Apple iPad Mini <br> G2356");
             }
             );
@@ -752,7 +766,7 @@ using TechStore.ViewComponentModels.ShopV;
                     </div>
                     <div class=""imageAndTextBox col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 "">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b946725", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b947115", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -775,7 +789,7 @@ using TechStore.ViewComponentModels.ShopV;
                             </div>
                             <div class=""productDescription"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b948239", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a49ba13870a77ac1c3dfc7f04ff3a1b63a56b948629", async() => {
                 WriteLiteral("Apple iPad Mini <br> G2356");
             }
             );

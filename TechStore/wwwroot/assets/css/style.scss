@@ -1278,7 +1278,7 @@ body{
                     .top{
                         display: flex;
                         justify-content: center;
-                        button{
+                        a{
                           &:hover{
                               background-color: $primary_color;
                               border-color: $primary_color;
@@ -1581,7 +1581,7 @@ body{
                             .top{
                                 display: flex;
                                 justify-content: center;
-                                button{
+                                a{
                                   &:hover{
                                       background-color: $primary_color;
                                       border-color: $primary_color;
@@ -1642,7 +1642,7 @@ body{
                             .top{
                                 display: flex;
                                 justify-content: center;
-                                button{
+                                a{
                                   &:hover{
                                       background-color: $primary_color;
                                       border-color: $primary_color;
@@ -1786,7 +1786,7 @@ body{
                                 .top{
                                     display: flex;
                                     justify-content: center;
-                                    button{
+                                    a{
                                       &:hover{
                                           background-color: $primary_color;
                                           border-color: $primary_color;
@@ -3044,7 +3044,7 @@ body{
                     .top{
                         display: flex;
                         justify-content: center;
-                        button{
+                        a{
                           &:hover{
                               background-color: $primary_color;
                               border-color: $primary_color;

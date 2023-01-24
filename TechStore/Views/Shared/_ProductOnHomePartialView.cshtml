@@ -33,7 +33,7 @@
                     </div>
                     <div class="onHoverBasketCompareWishList">
                         <div class="top">
-                            <button><img src="~/assets/images/cart.png" alt=""> <span>Add to Cart</span></button>
+                        <a class="addtobasket" asp-controller="basket" asp-action="addtobasket" asp-route-id="@item.Id"><img src="~/assets/images/cart.png" alt=""> <span>Add to Cart</span></a>
                         </div>
                         <div class="bottom">
                             <div class="left">

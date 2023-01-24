@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
+using System;
 using TechStore.DAL;
 using TechStore.Interfaces;
 using TechStore.Services;
@@ -21,12 +23,17 @@ namespace TechStore
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddScoped<ILayoutService, LayoutService>();
+            services.AddSession(option => {
+                option.IdleTimeout = TimeSpan.FromSeconds(10);
+            });
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +45,7 @@ namespace TechStore
             }
 
             app.UseRouting();
+            app.UseSession();
             app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
             {

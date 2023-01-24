@@ -3,11 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TechStore.ViewModels.Basket;
 
 namespace TechStore.Interfaces
 {
    public interface ILayoutService
     {
-      Task<IDictionary<string, string>> GetSettings();
+        Task<Dictionary<string, string>> GetSettingsAsync();
+        Task<IEnumerable<Category>> GetCategoriesAsync();
+        Task<IEnumerable<BasketVM>> GetBasketVMsAsync();
     }
 }
