@@ -50,6 +50,10 @@ namespace TechStore
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                   name: "default",
+                   pattern: "{area:exists}/{controller=DashBoard}/{action=Index}/{id?}"
+                   );
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=home}/{action=index}/{id?}"
                     );

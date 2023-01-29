@@ -33,7 +33,6 @@ namespace TechStore.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(2550)")
                         .HasMaxLength(2550);
 
@@ -480,7 +479,7 @@ namespace TechStore.Migrations
                         .HasForeignKey("ColorId");
 
                     b.HasOne("TechStore.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("ProductColors")
                         .HasForeignKey("ProductId");
                 });
 

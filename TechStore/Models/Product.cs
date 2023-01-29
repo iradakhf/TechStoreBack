@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -32,13 +33,19 @@ namespace TechStore.Models
         public int Count { get; set; }
 
         [StringLength(1000)]
-        [Required]
         public string MainImage { get; set; }
 
         public int CategoryId { get; set; }
         public Category Category { get; set; }
         public Nullable<int> BrandId { get; set; }
         public Brand Brand { get; set; }
+        [NotMapped]
+        public List<int> ColorIds { get; set; } = new List<int>();
+        public List<ProductColor> ProductColors { get; set; }
+        [NotMapped]
+        public List<int> Counts { get; set; } = new List<int>();
+        [NotMapped]
+        public IFormFile ProductFile { get; set; }
         public bool IsNewArrival { get; set; }
         public bool IsBestSeller { get; set; }
         public bool IsFeatured { get; set; }
