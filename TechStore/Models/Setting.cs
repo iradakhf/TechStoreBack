@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,6 +16,23 @@ namespace TechStore.Models
         [StringLength(4000)]
         [Required]
         public string Value { get; set; }
+        [NotMapped]
+        public IFormFile LogoImg { get; set; }
 
+        [NotMapped]
+        public IFormFile Paypal { get; set; }
+
+        [NotMapped]
+        public IFormFile Discover { get; set; }
+
+        [NotMapped]
+        public IFormFile Visa { get; set; }
+
+        [NotMapped]
+        public IFormFile MasterCard { get; set; }
+        [NotMapped]
+        public IFormFile AmericanExpress { get; set; }
+        [NotMapped]
+        public IFormFile FooterImg { get; set; }
     }
 }

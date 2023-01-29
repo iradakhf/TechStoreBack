@@ -59,7 +59,7 @@ namespace TechStore.Areas.Manage.Controllers
 
             if (await _context.Colors.AnyAsync(s => s.Name.ToLower() == color.Name.ToLower()))
             {
-                ModelState.AddModelError("Name", "Alreade Exists");
+                ModelState.AddModelError("Name", "Already Exists");
                 return View();
             }
 
@@ -74,9 +74,9 @@ namespace TechStore.Areas.Manage.Controllers
         public async Task<IActionResult> Update(int? id)
         {
             if (id == null) return BadRequest();
-            Color colour = await _context.Colors.FirstOrDefaultAsync(s => s.Id == id);
-            if (colour == null) return NotFound();
-            return View(colour);
+            Color color = await _context.Colors.FirstOrDefaultAsync(s => s.Id == id);
+            if (color == null) return NotFound();
+            return View(color);
         }
 
         [HttpPost]
@@ -92,9 +92,9 @@ namespace TechStore.Areas.Manage.Controllers
 
             if (id != color.Id) return NotFound();
 
-            Color dbcolour = await _context.Colors.FirstOrDefaultAsync(s => s.Id == id);
+            Color dbcolor = await _context.Colors.FirstOrDefaultAsync(s => s.Id == id);
 
-            if (dbcolour == null) return NotFound();
+            if (dbcolor == null) return NotFound();
 
             if (string.IsNullOrWhiteSpace(color.Name))
             {
@@ -110,12 +110,12 @@ namespace TechStore.Areas.Manage.Controllers
 
             if (await _context.Colors.AnyAsync(s => s.Name.ToLower() == color.Name.ToLower() && s.Id != color.Id))
             {
-                ModelState.AddModelError("Name", "Alreade Exists");
+                ModelState.AddModelError("Name", "Already Exists");
                 return View();
             }
 
-            dbcolour.Name = color.Name;
-            dbcolour.UpdatedAt = DateTime.UtcNow.AddHours(4);
+            dbcolor.Name = color.Name;
+            dbcolor.UpdatedAt = DateTime.UtcNow.AddHours(4);
 
             await _context.SaveChangesAsync();
 
@@ -126,50 +126,22 @@ namespace TechStore.Areas.Manage.Controllers
         {
             if (id == null) return BadRequest();
 
-            Color dbcolour = await _context.Colors.FirstOrDefaultAsync(t => t.Id == id);
+            Color dbcolor = await _context.Colors.Include(c=>c.ProductColors).ThenInclude(c=>c.Product).FirstOrDefaultAsync(t => t.IsDeleted ==false && t.Id == id);
 
-            if (dbcolour == null) return NotFound();
-
-            dbcolour.IsDeleted = true;
-            dbcolour.DeletedAt = DateTime.UtcNow.AddHours(4);
-
-            await _context.SaveChangesAsync();
-
-            IEnumerable<Color> colours = await _context.Colors
-                .Include(t => t.ProductColors)
-                .Where(c=>c.IsDeleted==false)
-                .OrderByDescending(t => t.CreatedAt)
-                .ToListAsync();
-
-            ViewBag.PageIndex = page;
-            ViewBag.PageCount = Math.Ceiling((double)colours.Count() / 5);
-
-            return PartialView("_ColorPartial", colours.Skip((page - 1) * 5).Take(5));
-        }
-
-        public async Task<IActionResult> Restore(int? id, int page = 1)
-        {
-            if (id == null) return BadRequest();
-
-            Color dbcolour = await _context.Colors.FirstOrDefaultAsync(t => t.Id == id);
-
-            if (dbcolour == null) return NotFound();
-
-            dbcolour.IsDeleted = false;
-            dbcolour.DeletedAt = null;
+            if (dbcolor == null) return NotFound();
+            if ((dbcolor.ProductColors != null && dbcolor.ProductColors.Count() > 0))
+            {
+                return RedirectToAction("Index");
+            }
+            dbcolor.IsDeleted = true;
+            dbcolor.DeletedAt = DateTime.UtcNow.AddHours(4);
 
             await _context.SaveChangesAsync();
 
-            IEnumerable<Color> colours = await _context.Colors
-                .Include(c => c.ProductColors)
-                .Where(c=>c.IsDeleted ==false)
-                .OrderByDescending(t => t.CreatedAt)
-                .ToListAsync();
+            return RedirectToAction("Index", new {  page });
 
-            ViewBag.PageIndex = page;
-            ViewBag.PageCount = Math.Ceiling((double)colours.Count() / 5);
-
-            return PartialView("_ColorPartial", colours.Skip((page - 1) * 5).Take(5));
         }
+
+
     }
 }

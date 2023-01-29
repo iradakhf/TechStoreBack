@@ -194,3 +194,15 @@ C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Ar
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_ValidateFormPartial.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Slider\Update.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Slider\Create.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Brand\Create.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Brand\Index.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Brand\Update.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_BrandPartial.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\PaymentMethod\Index.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\PaymentMethod\Update.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_PaymentPartial.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Setting\Index.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Setting\Update.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\SpecialOffer\Index.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\ShopBanner\Index.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\ShopBanner\Update.cshtml.g.cs

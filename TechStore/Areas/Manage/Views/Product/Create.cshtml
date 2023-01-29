@@ -58,8 +58,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="ProductFile"></label>
-                <input asp-for="ProductFile" accept="image/jpeg" class="form-control bg-light">
+                <input asp-for="ProductFile" accept="image/jpeg" class="form-control bg-light" placeholder="enter product main image">
                 <span class="text-danger" asp-validation-for="ProductFile"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductImagesFile"></label>
+                <input asp-for="ProductImagesFile" accept="image/jpeg" class="form-control" placeholder="Enter Product images">
+                <span class="text-danger" asp-validation-for="ProductImagesFile"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CategoryId"></label>

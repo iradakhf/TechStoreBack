@@ -24,6 +24,8 @@ namespace TechStore.DAL
         public DbSet<Color> Colors { get; set; }
         public DbSet<ProductColor> ProductColors { get; set; }
         public DbSet<ShopBanner> ShopBanners { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
+
 
     }
 }

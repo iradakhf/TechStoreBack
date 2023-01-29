@@ -42,6 +42,10 @@ namespace TechStore.Models
         [NotMapped]
         public List<int> ColorIds { get; set; } = new List<int>();
         public List<ProductColor> ProductColors { get; set; }
+        public List<ProductImage> ProductImages { get; set; }
+        [NotMapped]
+        public IFormFile[] ProductImagesFile { get; set; }
+
         [NotMapped]
         public List<int> Counts { get; set; } = new List<int>();
         [NotMapped]

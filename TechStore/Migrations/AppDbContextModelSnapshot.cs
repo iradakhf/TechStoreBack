@@ -230,7 +230,6 @@ namespace TechStore.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("MainImage")
-                        .IsRequired()
                         .HasColumnType("nvarchar(1000)")
                         .HasMaxLength(1000);
 
@@ -286,6 +285,39 @@ namespace TechStore.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductColors");
+                });
+
+            modelBuilder.Entity("TechStore.Models.ProductImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(2000)")
+                        .HasMaxLength(2000);
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("TechStore.Models.Setting", b =>
@@ -481,6 +513,15 @@ namespace TechStore.Migrations
                     b.HasOne("TechStore.Models.Product", "Product")
                         .WithMany("ProductColors")
                         .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("TechStore.Models.ProductImage", b =>
+                {
+                    b.HasOne("TechStore.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("TechStore.Models.SpecialOffer", b =>

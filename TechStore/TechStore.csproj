@@ -19,6 +19,8 @@
     <Compile Remove="Migrations\20230123181854_AddOneToManyRelationToProductAndColor.Designer.cs" />
     <Compile Remove="Migrations\20230123182007_AddOneToManyRelationToProductAndColor.cs" />
     <Compile Remove="Migrations\20230123182007_AddOneToManyRelationToProductAndColor.Designer.cs" />
+    <Compile Remove="Migrations\20230129110005_CreatedProductImageTable.cs" />
+    <Compile Remove="Migrations\20230129110005_CreatedProductImageTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

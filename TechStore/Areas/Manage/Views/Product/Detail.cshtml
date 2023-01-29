@@ -25,6 +25,8 @@
                 <div class="card-title"><span class="text-primary">is best seller:</span>@Model.IsBestSeller</div>
                 <div class="card-title"><span class="text-primary">is featured:</span>@Model.IsFeatured</div>
                 <div class="card-title"><span class="text-primary">is new arrival:</span>@Model.IsNewArrival</div>
+                <div class="card-title"><span class="text-primary">is featured:</span>@Model.CreatedAt?.ToString("dd/mm/yyyy")</div>
+                <div class="card-title"><span class="text-primary">is featured:</span>@Model.UpdatedAt?.ToString("dd/mm/yyyy")</div>
                 <div class="card-title"><span class="text-primary">seria:</span>@Model.Seria</div>
                 <div class="card-title"><span class="text-primary">Category:</span>@Model.Category.Name</div>
                 <div class="card-title"><span class="text-primary">Product Colors:</span>@string.Join(", ", Model.ProductColors.Select(x => x.Color.Name))</div>

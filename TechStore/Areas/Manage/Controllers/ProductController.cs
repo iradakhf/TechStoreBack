@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -92,45 +93,66 @@ namespace TechStore.Areas.Manage.Controllers
             }
 
 
-            if (product.ProductFile!= null)
+            if (product.ProductFile== null)
             {
+                ModelState.AddModelError("ProductFile", "image is required");
+                return View(product);
+            }
+            if (product.ProductFile.ContentType != "image/png")
+            {
+                ModelState.AddModelError("CategoryImage", "CategoryImage type should be png");
+                return View();
+            }
+            if (product.ProductFile.Length > 20000)
+            {
+                ModelState.AddModelError("ProductFile", "ProductFile length should be less than 20k");
+                return View();
+            }
+            product.MainImage = product.ProductFile.CreateFile(_env, "assets", "images", "product");
+           
+            if (product.ProductImagesFile.Count() > 0)
+            {
+                if (product.ProductImagesFile.Count() > 10)
+                {
+                    ModelState.AddModelError("ProductImagesFile", "can not be more than 10 images");
+                    return View(product);
+                }
+                List<ProductImage> productImages = new List<ProductImage>();
+                foreach (IFormFile item in product.ProductImagesFile)
+                {
+                    if (item != null)
+                    {
+                        if (item.ContentType != "image/png")
+                        {
+                            ModelState.AddModelError("ProductImagesFile", "ProductImagesFile type should be png");
+                            return View();
+                        }
+                        ProductImage productImage = new ProductImage
+                        {
+                            Image = item.CreateFile(_env, "assets", "images", "product"),
+                            CreatedAt = DateTime.UtcNow.AddHours(4)
+                        };
+                        productImages.Add(productImage);
+                    }
 
-                product.MainImage = product.ProductFile.CreateFile(_env, "assets", "images", "product");
+                }
+                if (product.ProductImagesFile == null)
+                {
+                    ModelState.AddModelError("ProductImagesFile", "image is required");
+                    return View(product);
+                }
+                if (product.ProductImagesFile.Length > 20000)
+                {
+                    ModelState.AddModelError("ProductImagesFile", "ProductFile length should be less than 20k");
+                    return View();
+                }
+                product.ProductImages = productImages;
             }
             else
             {
-                ModelState.AddModelError("ProductFile", "ProductFile image is required");
+                ModelState.AddModelError("ProductImagesFile", "images should be choosen");
                 return View(product);
             }
-
-            //if (product.ProductImagesFile.Count() > 0)
-            //{
-            //    if (product.ProductImagesFile.Count() > 10)
-            //    {
-            //        ModelState.AddModelError("ProductImagesFile", "Max 10 sekil olar");
-            //        return View(product);
-            //    }
-            //    List<ProductImages> productImages = new List<ProductImages>();
-            //    foreach (IFormFile item in product.ProductImagesFile)
-            //    {
-            //        if (item != null)
-            //        {
-            //            ProductImages productImage = new ProductImages
-            //            {
-            //                Image = item.CreateFile(_env, "dist", "images", "products"),
-            //                CreatedAt = DateTime.UtcNow.AddHours(4)
-            //            };
-            //            productImages.Add(productImage);
-            //        }
-
-            //    }
-            //    product.ProductImages = productImages;
-            //}
-            //else
-            //{
-            //    ModelState.AddModelError("ProductImagesFile", "Mutleq sekilleri secmelisiniz");
-            //    return View(product);
-            //}
 
             product.CreatedAt = DateTime.UtcNow.AddHours(4);
             product.Count = product.Counts.Sum();
@@ -153,7 +175,7 @@ namespace TechStore.Areas.Manage.Controllers
                 .Include(p => p.Category)
                 .Include(p => p.ProductColors).ThenInclude(c => c.Color)
                 .Include(p=>p.Brand)
-                //.Include(p => p.ProductImages)
+                .Include(p => p.ProductImages)
                 .FirstOrDefaultAsync(p => p.Id == id && !p.IsDeleted);
 
             if (products == null) return NotFound();
@@ -174,7 +196,7 @@ namespace TechStore.Areas.Manage.Controllers
             Product dbproduct = await _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.ProductColors).ThenInclude(c => c.Color)
-                //.Include(p => p.ProductImages)
+                .Include(p => p.ProductImages)
                 .FirstOrDefaultAsync(p => p.Id == id && !p.IsDeleted);
 
             if (product.ColorIds.Count != product.Counts.Count)
@@ -195,12 +217,26 @@ namespace TechStore.Areas.Manage.Controllers
 
             if (dbproduct == null) return NotFound();
 
-
-            //if (product.ProductImagesFile != null && product.ProductImagesFile.Length > (10 - dbproduct.ProductImages.Where(p => !p.IsDeleted).Count()))
-            //{
-            //    ModelState.AddModelError("ProductImagesFile", $"Limiti kecdiz, Siz {10 - dbproduct.ProductImages.Where(p => !p.IsDeleted).Count()}-dene sekil elave eliye bilersiz");
-            //    return View(dbproduct);
-            //}
+            if (product.ProductFile == null)
+            {
+                ModelState.AddModelError("ProductFile", "image is required");
+                return View(product);
+            }
+            if (product.ProductFile.ContentType != "image/png")
+            {
+                ModelState.AddModelError("CategoryImage", "CategoryImage type should be png");
+                return View();
+            }
+            if (product.ProductFile.Length > 20000)
+            {
+                ModelState.AddModelError("ProductFile", "ProductFile length should be less than 20k");
+                return View();
+            }
+            if (product.ProductImagesFile != null && product.ProductImagesFile.Length > (10 - dbproduct.ProductImages.Where(p => !p.IsDeleted).Count()))
+            {
+                ModelState.AddModelError("ProductImagesFile", "you exceed the limit");
+                return View(dbproduct);
+            }
 
 
             if (!await _context.Categories.AnyAsync(c => c.Id == product.CategoryId && !c.IsDeleted))
@@ -214,11 +250,11 @@ namespace TechStore.Areas.Manage.Controllers
                 ModelState.AddModelError("BrandId", "Brand is not choosen correctly");
                 return View(product);
             }
-            foreach (int colourId in product.ColorIds)
+            foreach (int colorId in product.ColorIds)
             {
-                if (!await _context.Colors.AnyAsync(s => s.Id == colourId))
+                if (!await _context.Colors.AnyAsync(s => s.Id == colorId))
                 {
-                    ModelState.AddModelError("", "Incorrect colour");
+                    ModelState.AddModelError("", "Incorrect color");
                     return View();
                 }
             }
@@ -254,24 +290,24 @@ namespace TechStore.Areas.Manage.Controllers
                 dbproduct.MainImage = product.ProductFile.CreateFile(_env, "assets", "images", "product");
             }
 
-            //if (product.ProductImagesFile != null && product.ProductImagesFile.Count() > 0)
-            //{
-            //    List<ProductImages> productImages = new List<ProductImages>();
-            //    foreach (IFormFile item in product.ProductImagesFile)
-            //    {
-            //        if (item != null)
-            //        {
-            //            ProductImages productImage = new ProductImages
-            //            {
-            //                Image = item.CreateFile(_env, "dist", "images", "products"),
-            //                CreatedAt = DateTime.UtcNow.AddHours(4)
-            //            };
-            //            productImages.Add(productImage);
-            //        }
+            if (product.ProductImagesFile != null && product.ProductImagesFile.Count() > 0)
+            {
+                List<ProductImage> productImages = new List<ProductImage>();
+                foreach (IFormFile item in product.ProductImagesFile)
+                {
+                    if (item != null)
+                    {
+                        ProductImage productImage = new ProductImage
+                        {
+                            Image = item.CreateFile(_env, "assets", "images", "product"),
+                            CreatedAt = DateTime.UtcNow.AddHours(4)
+                        };
+                        productImages.Add(productImage);
+                    }
 
-            //    }
-            //    dbproduct.ProductImages.AddRange(productImages);
-            //}
+                }
+                dbproduct.ProductImages.AddRange(productImages);
+            }
 
             dbproduct.Count = product.Counts.Sum();
             dbproduct.CategoryId = product.CategoryId;
@@ -289,18 +325,6 @@ namespace TechStore.Areas.Manage.Controllers
 
             return RedirectToAction("Index", new { page });
         }
-        public async Task<IActionResult> GetFormColorCount()
-        {
-            ViewBag.Colour = await _context.Colors.Where(c => !c.IsDeleted).ToListAsync();
-
-            return PartialView("_ProductColorPartial");
-        }
-        public IActionResult GetFormProductFeatures()
-        {
-            return PartialView("_ProductFeaturesPartial");
-        }
-
-
         public async Task<IActionResult> Detail(int? id, int page = 1)
         {
             ViewBag.PageIndex = page;
@@ -309,7 +333,7 @@ namespace TechStore.Areas.Manage.Controllers
             Product products = await _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.ProductColors).ThenInclude(c => c.Color)
-                //.Include(p => p.ProductImages)
+                .Include(p => p.ProductImages)
                 .FirstOrDefaultAsync(p => p.Id == id && !p.IsDeleted);
 
             if (products == null) return NotFound();
@@ -326,7 +350,7 @@ namespace TechStore.Areas.Manage.Controllers
             Product products = await _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.ProductColors).ThenInclude(c => c.Color)
-                //.Include(p => p.ProductImages)
+                .Include(p => p.ProductImages)
                 .FirstOrDefaultAsync(p => p.Id == id && !p.IsDeleted);
 
             if (products == null) return NotFound();
@@ -340,7 +364,7 @@ namespace TechStore.Areas.Manage.Controllers
             Product products = await _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.ProductColors).ThenInclude(c => c.Color)
-                //.Include(p => p.ProductImages)
+                .Include(p => p.ProductImages)
                 .FirstOrDefaultAsync(p => p.Id == id && !p.IsDeleted);
 
             if (products == null) return NotFound();
