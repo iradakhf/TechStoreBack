@@ -11,10 +11,8 @@ namespace TechStore.Models
     public class Setting : BaseEntity
     {
         [StringLength(4000)]
-        [Required]
         public string Key { get; set; }
         [StringLength(4000)]
-        [Required]
         public string Value { get; set; }
         [NotMapped]
         public IFormFile LogoImg { get; set; }

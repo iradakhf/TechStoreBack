@@ -200,7 +200,6 @@ C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Ar
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_BrandPartial.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\PaymentMethod\Index.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\PaymentMethod\Update.cshtml.g.cs
-C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_PaymentPartial.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Setting\Index.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Setting\Update.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\SpecialOffer\Index.cshtml.g.cs

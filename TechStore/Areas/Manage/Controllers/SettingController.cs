@@ -28,31 +28,152 @@ namespace TechStore.Areas.Manage.Controllers
             return View(setting);
         }
 
-        public async Task<IActionResult> Update(int? id)
+        public async Task<IActionResult> Update(string key)
         {
-            if (id == null) return BadRequest();
-            Setting setting = await _context.Settings.FirstOrDefaultAsync(k => k.Id == id);
+            if (key == null) return BadRequest();
+            Setting setting = await _context.Settings.FirstOrDefaultAsync(k => k.Key == key);
             if (setting == null) return NotFound();
             return View(setting);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int? id, Setting setting)
+        public async Task<IActionResult> Update(string key, Setting setting)
         {
             if (!ModelState.IsValid)
             {
                 return View(setting);
             }
 
-            if (id == null) return BadRequest();
-            if (id != setting.Id) return NotFound();
+            if (key == null) return BadRequest();
+            if (key != setting.Key) return NotFound();
 
-            Setting dbSetting = await _context.Settings.FirstOrDefaultAsync(k => k.Id == id);
+            Setting dbSetting = await _context.Settings.FirstOrDefaultAsync(k => k.Key == key);
 
             if (dbSetting == null) return NotFound();
 
-            if (setting.Value.Contains(".png"))
+            if (setting.Key== "paypal")
+            {
+                if (setting != null)
+                {
+                    if (setting.Paypal == null)
+                    {
+                        ModelState.AddModelError("Paypal", "Sekil Mutleq Olmalidi");
+                        return View(dbSetting);
+                    }
+                    if (setting.Paypal.ContentType != "image/png")
+                    {
+                        ModelState.AddModelError("Paypal", " type should be png");
+                        return View();
+                    }
+                    if (setting.Paypal.Length > 20000)
+                    {
+                        ModelState.AddModelError("Paypal", " length should be less than 20k");
+                        return View();
+                    }
+
+                    Helper.DeleteFile(_env, dbSetting.Value, "assets", "images");
+                    dbSetting.Value = setting.Paypal.CreateFile(_env, "assets", "images");
+                }
+
+            }
+            else if (setting.Key == "discover")
+            {
+                if (setting != null)
+                {
+                    if (setting.Discover == null)
+                    {
+                        ModelState.AddModelError("Discover", "Sekil Mutleq Olmalidi");
+                        return View(dbSetting);
+                    }
+                    if (setting.Discover.ContentType != "image/png")
+                    {
+                        ModelState.AddModelError("Discover", " type should be png");
+                        return View();
+                    }
+                    if (setting.Discover.Length > 20000)
+                    {
+                        ModelState.AddModelError("Discover", " length should be less than 20k");
+                        return View();
+                    }
+
+                    Helper.DeleteFile(_env, dbSetting.Value, "assets", "images" );
+                    dbSetting.Value = setting.Discover.CreateFile(_env, "assets", "images" );
+                }
+            }
+            else if (setting.Key == "visa")
+            {
+                if (setting != null)
+                {
+                    if (setting.Visa == null)
+                    {
+                        ModelState.AddModelError("Visa", "Sekil Mutleq Olmalidi");
+                        return View(dbSetting);
+                    }
+                    if (setting.Visa.ContentType != "image/png")
+                    {
+                        ModelState.AddModelError("Visa", " type should be png");
+                        return View();
+                    }
+                    if (setting.Visa.Length > 20000)
+                    {
+                        ModelState.AddModelError("Visa", " length should be less than 20k");
+                        return View();
+                    }
+
+                    Helper.DeleteFile(_env, dbSetting.Value, "assets", "images" );
+                    dbSetting.Value = setting.Visa.CreateFile(_env, "assets", "images" );
+                }
+            }
+            else if (setting.Key == "mastercard")
+            {
+                if (setting != null)
+                {
+                    if (setting.MasterCard == null)
+                    {
+                        ModelState.AddModelError("MasterCard", "Sekil Mutleq Olmalidi");
+                        return View(dbSetting);
+                    }
+                    if (setting.MasterCard.ContentType != "image/png")
+                    {
+                        ModelState.AddModelError("MasterCard", " type should be png");
+                        return View();
+                    }
+                    if (setting.MasterCard.Length > 20000)
+                    {
+                        ModelState.AddModelError("MasterCard", " length should be less than 20k");
+                        return View();
+                    }
+
+                    Helper.DeleteFile(_env, dbSetting.Value, "assets", "images" );
+                    dbSetting.Value = setting.MasterCard.CreateFile(_env, "assets", "images" );
+                }
+            }
+            else if (setting.Key == "americanexpress")
+            {
+                if (setting != null)
+                {
+                    if (setting.AmericanExpress == null)
+                    {
+                        ModelState.AddModelError("AmericanExpress", "Sekil Mutleq Olmalidi");
+                        return View(dbSetting);
+                    }
+                    if (setting.AmericanExpress.ContentType != "image/png")
+                    {
+                        ModelState.AddModelError("AmericanExpress", " type should be png");
+                        return View();
+                    }
+                    if (setting.AmericanExpress.Length > 20000)
+                    {
+                        ModelState.AddModelError("AmericanExpress", " length should be less than 20k");
+                        return View();
+                    }
+
+                    Helper.DeleteFile(_env, dbSetting.Value, "assets", "images" );
+                    dbSetting.Value = setting.AmericanExpress.CreateFile(_env, "assets", "images" );
+                }
+            }
+            else if (setting.Key == "footerLogo")
             {
                 if (setting != null)
                 {
@@ -63,19 +184,42 @@ namespace TechStore.Areas.Manage.Controllers
                     }
                     if (setting.FooterImg.ContentType != "image/png")
                     {
-                        ModelState.AddModelError("FooterImg", "FooterImg type should be png");
+                        ModelState.AddModelError("FooterImg", " type should be png");
                         return View();
                     }
                     if (setting.FooterImg.Length > 20000)
                     {
-                        ModelState.AddModelError("FooterImg", "FooterImg length should be less than 20k");
+                        ModelState.AddModelError("FooterImg", " length should be less than 20k");
                         return View();
                     }
 
-                    Helper.DeleteFile(_env, dbSetting.Value, "assets", "images", "payment");
-                    dbSetting.Value = setting.LogoImg.CreateFile(_env, "assets", "images", "payment");
+                    Helper.DeleteFile(_env, dbSetting.Value, "assets", "images" );
+                    dbSetting.Value = setting.FooterImg.CreateFile(_env, "assets", "images" );
                 }
+            }
+            else if (setting.Key == "callLogo")
+            {
+                if (setting != null)
+                {
+                    if (setting.LogoImg == null)
+                    {
+                        ModelState.AddModelError("LogoImg", "Sekil Mutleq Olmalidi");
+                        return View(dbSetting);
+                    }
+                    if (setting.LogoImg.ContentType != "image/png")
+                    {
+                        ModelState.AddModelError("LogoImg", " type should be png");
+                        return View();
+                    }
+                    if (setting.LogoImg.Length > 20000)
+                    {
+                        ModelState.AddModelError("LogoImg", " length should be less than 20k");
+                        return View();
+                    }
 
+                    Helper.DeleteFile(_env, dbSetting.Value, "assets", "images" );
+                    dbSetting.Value = setting.LogoImg.CreateFile(_env, "assets", "images" );
+                }
             }
             else
             {

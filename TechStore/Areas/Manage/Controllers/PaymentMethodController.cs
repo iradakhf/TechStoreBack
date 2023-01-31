@@ -21,16 +21,15 @@ namespace TechStore.Areas.Manage.Controllers
             _context = context;
             _env = env;
         }
-        public async Task<IActionResult> Index(int page = 1)
+        public async Task<IActionResult> Index()
         {
             IEnumerable<PaymentMethod> paymentMethods = await _context.PaymentMethod
                 .Where(c => c.IsDeleted == false)
                 .OrderByDescending(t => t.CreatedAt)
                 .ToListAsync();
 
-            ViewBag.PageIndex = page;
-            ViewBag.PageCount = Math.Ceiling((double)paymentMethods.Count() / 5);
-            return View(paymentMethods.Skip((page - 1) * 5).Take(5));
+           
+            return View(paymentMethods);
         }
         public async Task<IActionResult> Update(int? id)
         {
@@ -47,7 +46,7 @@ namespace TechStore.Areas.Manage.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int? id, PaymentMethod paymentMethod, int page = 1)
+        public async Task<IActionResult> Update(int? id, PaymentMethod paymentMethod)
         {
 
             PaymentMethod dbPayment = await _context.PaymentMethod.FirstOrDefaultAsync(c => c.Id == id && c.IsDeleted==false);
@@ -110,7 +109,7 @@ namespace TechStore.Areas.Manage.Controllers
             dbPayment.UpdatedAt = DateTime.UtcNow.AddHours(4);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Index", new { page });
+            return RedirectToAction("Index");
         }
 
 
