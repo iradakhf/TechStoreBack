@@ -85,29 +85,7 @@
             </div>
             <div class="InputContaine">
                 <div class="InputContaineForadd">
-                    <row>
-                        @if (Model.ProductColors != null)
-                        {
-                            @for (int i = 0; i < Model.ProductColors.Count(); i++)
-                            {
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label>Select Color</label>
-                                        <select class="form-control bg-light" name="ColorIds[]" asp-items="@new SelectList(ViewBag.Color, nameof(Color.Id), nameof(Color.Name), Model.ProductColors[i].Color?.Id)">
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label>Enter Count</label>
-                                        <input class="form-control bg-light" name="Counts[]" asp-for="@Model.ProductColors[i].Count" placeholder="Enter Count" />
-                                    </div>
-                                </div>
-                            }
-                        }
-
-
-                    </row>
+                    @await Html.PartialAsync("_ProductColorPartial", Model)
                 </div>
                 <div class="addInputButton">
                     <a asp-action="GetFormColorCount" id="inputadding" class="btn btn-primary">Add</a>

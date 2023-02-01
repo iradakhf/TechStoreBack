@@ -98,9 +98,9 @@ namespace TechStore.Areas.Manage.Controllers
                 ModelState.AddModelError("ProductFile", "image is required");
                 return View(product);
             }
-            if (product.ProductFile.ContentType != "image/png")
+            if (product.ProductFile.ContentType != "image/jpeg")
             {
-                ModelState.AddModelError("CategoryImage", "CategoryImage type should be png");
+                ModelState.AddModelError("ProductFile", "ProductFile type should be jpeg");
                 return View();
             }
             if (product.ProductFile.Length > 20000)
@@ -122,9 +122,9 @@ namespace TechStore.Areas.Manage.Controllers
                 {
                     if (item != null)
                     {
-                        if (item.ContentType != "image/png")
+                        if (item.ContentType != "image/jpeg")
                         {
-                            ModelState.AddModelError("ProductImagesFile", "ProductImagesFile type should be png");
+                            ModelState.AddModelError("ProductImagesFile", "ProductImagesFile type should be jpeg");
                             return View();
                         }
                         ProductImage productImage = new ProductImage
@@ -222,9 +222,9 @@ namespace TechStore.Areas.Manage.Controllers
                 ModelState.AddModelError("ProductFile", "image is required");
                 return View(product);
             }
-            if (product.ProductFile.ContentType != "image/png")
+            if (product.ProductFile.ContentType != "image/jpeg")
             {
-                ModelState.AddModelError("CategoryImage", "CategoryImage type should be png");
+                ModelState.AddModelError("ProductFile", "ProductFile type should be jpeg");
                 return View();
             }
             if (product.ProductFile.Length > 20000)
@@ -377,6 +377,12 @@ namespace TechStore.Areas.Manage.Controllers
             return RedirectToAction("index", new { page });
         }
 
-       
+        public async Task<IActionResult> GetFormColorCount()
+        {
+            ViewBag.Color = await _context.Colors.Where(c => !c.IsDeleted).ToListAsync();
+
+            return PartialView("_ProductColorPartial");
+        }
+      
     }
 }
