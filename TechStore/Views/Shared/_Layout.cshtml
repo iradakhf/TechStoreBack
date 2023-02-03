@@ -4,11 +4,13 @@
     Dictionary<string, string> settings = await layoutservices.GetSettingsAsync();
     IEnumerable<Category> categories = await layoutservices.GetCategoriesAsync();
     IEnumerable<BasketVM> basketVMs = await layoutservices.GetBasketVMsAsync();
+    IEnumerable<Product> products = await layoutservices.GetProductAsync();
     HeaderVM headerVM = new HeaderVM
     {
         BasketVMs = basketVMs,
         Categories = categories,
-        Settings = settings
+        Settings = settings,
+        Products = products
     };
 }
 <!DOCTYPE html>

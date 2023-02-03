@@ -76,36 +76,21 @@
                             <div id="categoryInputOnSearch" class="category">
                                 All Category <i class="fa-solid fa-angle-down"></i>
                                 <div class="allCategories">
+                                    @foreach (Category category in Model.Categories.Where(c=>c.IsMain==true))
+                                    {
+
                                     <div class="title">
-                                        Electronics
+                                        @category.Name
                                     </div>
                                     <ul>
-                                        <li>Components</li>
-                                        <li>Laptop</li>
-                                        <li>Monitor</li>
-                                        <li>Mp3 player</li>
-                                        <li>Scanners</li>
+                                        @foreach (var item in category.Children)
+                                        {
+                                        <li>@item.Name</li>
+
+                                        }
                                     </ul>
-                                    <div class="title">
-                                        Furniture
-                                    </div>
-                                    <ul>
-                                        <li>Components</li>
-                                        <li>Laptop</li>
-                                        <li>Monitor</li>
-                                        <li>Mp3 player</li>
-                                        <li>Scanners</li>
-                                    </ul>
-                                    <div class="title">
-                                        Accessories
-                                    </div>
-                                    <ul>
-                                        <li>Components</li>
-                                        <li>Laptop</li>
-                                        <li>Monitor</li>
-                                        <li>Mp3 player</li>
-                                        <li>Scanners</li>
-                                    </ul>
+                                        
+                                    }
                                 </div>
                             </div>
                             <input id="inputSearch" onclick="on()" type="text" placeholder="Search what you looking for?">
@@ -118,75 +103,28 @@
                                         <div class="title">
                                             Search Suggestions
                                         </div>
+                                        @foreach (var item in Model.Products.Take(4))
+	{
                                         <div class="row align-items-center mb-3">
                                             <div class="col-lg-3">
-                                                <img src="~/assets/images/product/s05.jpg" alt="product">
+                                                <img src="~/assets/images/product/@item.MainImage" alt="product">
                                             </div>
                                             <div class="col-lg-9">
                                                 <div class="name">
-                                                    <a href="">Razer RZ02</a>
+                                                    <a href="">@item.Name</a>
                                                 </div>
                                                 <div class="price">
                                                     <div class="sale">
-                                                        $50.00
+                                                        $@item.DiscountedPrice
                                                     </div>
                                                     <div class="regular">
-                                                        $2,999.00
+                                                        $@item.Price
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row align-items-center mb-3">
-                                            <div class="col-lg-3">
-                                                <img src="~/assets/images/product/14.jpg" alt="product">
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <div class="name">
-                                                    <a href="">Apple Ipad mini</a>
-                                                </div>
-                                                <div class="price">
-                                                    <div class="sale">
-                                                        $50.00
-                                                    </div>
-                                                    <div class="regular">
-                                                        $2,999.00
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center mb-3">
-                                            <div class="col-lg-3">
-                                                <img src="~/assets/images/product/l01.jpg" alt="product">
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <div class="name">
-                                                    <a href="">Lorem ipsum dolor sit.</a>
-                                                </div>
-                                                <div class="price">
-                                                    <div class="sale">
-                                                        $50.00
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-3">
-                                                <img src="~/assets/images/product/02.jpg" alt="product">
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <div class="name">
-                                                    <a href="">Apple Ipad mini</a>
-                                                </div>
-                                                <div class="price">
-                                                    <div class="sale">
-                                                        $50.00
-                                                    </div>
-                                                    <div class="regular">
-                                                        $2,999.00
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+		 
+	}
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
@@ -195,27 +133,15 @@
                                             Categories
                                         </div>
                                         <ul>
+                                           @foreach (var item in Model.Categories.Take(5))
+                                           {
                                             <li>
-                                                <a href="">Networking & Internet Devices</a>
+                                                <a href="">@item.Name</a>
                                             </li>
-                                            <li>
-                                                <a href="">Lorem ipsum dolor sit amet.</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Lorem ipsum dolor sit amet consectetur.</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Lorem, ipsum dolor.</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Networking & Internet Devices</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Lorem ipsum dolor sit.</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Networking & Internet Devices</a>
-                                            </li>
+		 
+	}
+
+                                           
                                         </ul>
                                     </div>
                                 </div>
@@ -276,634 +202,93 @@
                         </div>
                         <div class="megaMenuList">
                             <ul>
-                                <li class="laptopMac">
-                                    <a href="">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-3 col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3">
-                                                <img src="~/assets/images/category-icon/01.png" alt="">
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-6 col-sm-6 col-xl-6 col-xxl-6">
-                                                <span>Laptops & Mac</span>
-                                            </div>
-                                            <div class="col-lg-1 col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1">
-                                                <i class="fa-solid fa-angle-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="megaMenuListSubList">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
-                                                <h2>Laptop & Mac</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="">Networking & Internet Devices</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Laptops, Desktops & Monitors</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Hard Drives & Memory Cards</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Computer Accessories</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Software</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Shop all</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
-                                                <h2>Audio & Video</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="">Headphones</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Home Entertainment Systems</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Hard Drives & Memory Cards</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Shop all</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4 rightOnSubCategoryList">
-                                                <div class="row">
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Phone</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-01.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Computer</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-02.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Headphones</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-03.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="mobileAndTablet">
-                                    <a href="">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-3 col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3">
-                                                <img src="~/assets/images/category-icon/02.png" alt="">
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-6 col-sm-6 col-xl-6 col-xxl-6">
-                                                <span>Mobile and Tablet</span>
-                                            </div>
-                                            <div class="col-lg-1 col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1">
-                                                <i class="fa-solid fa-angle-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="megaMenuListSubList2">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
-                                                <h2>Laptop & Mac</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="">Networking & Internet Devices</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Laptops, Desktops & Monitors</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Hard Drives & Memory Cards</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Computer Accessories</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Software</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Shop all</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
-                                                <h2>Audio & Video</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="">Headphones</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Home Entertainment Systems</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Hard Drives & Memory Cards</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Shop all</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4 rightOnSubCategoryList">
-                                                <div class="row">
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Phone</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-01.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Computer</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-02.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Headphones</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-03.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="homeDevices">
-                                    <a href="">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-3 col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3">
-                                                <img src="~/assets/images/category-icon/03.png" alt="">
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-6 col-sm-6 col-xl-6 col-xxl-6">
-                                                <span>Home Devices</span>
-                                            </div>
-                                            <div class="col-lg-1 col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1">
-                                                <i class="fa-solid fa-angle-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="megaMenuListSubList3">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
-                                                <h2>Laptop & Mac</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="">Networking & Internet Devices</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Laptops, Desktops & Monitors</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Hard Drives & Memory Cards</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Computer Accessories</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Software</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Shop all</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
-                                                <h2>Audio & Video</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="">Headphones</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Home Entertainment Systems</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Hard Drives & Memory Cards</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Shop all</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4 rightOnSubCategoryList">
-                                                <div class="row">
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Phone</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-01.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Computer</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-02.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Headphones</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-03.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-3 col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3">
-                                                <img src="~/assets/images/category-icon/04.png" alt="">
-                                            </div>
-                                            <div class="col-lg-9 col-md-9 col-9 col-sm-9 col-xl-9 col-xxl-9">
-                                                <span>Software</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-3 col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3">
-                                                <img src="~/assets/images/category-icon/05.png" alt="">
-                                            </div>
-                                            <div class="col-lg-9 col-md-9 col-9 col-sm-9 col-xl-9 col-xxl-9">
-                                                <span>TV & Audio</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-3 col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3">
-                                                <img src="~/assets/images/category-icon/06.png" alt="">
-                                            </div>
-                                            <div class="col-lg-9 col-md-9 col-9 col-sm-9 col-xl-9 col-xxl-9">
-                                                <span>Sports & Fitness</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="gamesAndToys">
-                                    <a href="">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-3 col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3">
-                                                <img src="~/assets/images/category-icon/07.png" alt="">
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-6 col-sm-6 col-xl-6 col-xxl-6">
-                                                <span>Games & Toys</span>
-                                            </div>
-                                            <div class="col-lg-1 col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1">
-                                                <i class="fa-solid fa-angle-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="megaMenuListSubList5">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
-                                                <h2>Laptop & Mac</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="">Networking & Internet Devices</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Laptops, Desktops & Monitors</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Hard Drives & Memory Cards</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Computer Accessories</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Software</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Shop all</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
-                                                <h2>Audio & Video</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="">Headphones</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Home Entertainment Systems</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Hard Drives & Memory Cards</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Shop all</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4 rightOnSubCategoryList">
-                                                <div class="row">
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Phone</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-01.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Computer</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-02.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Headphones</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-03.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-3 col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3">
-                                                <img src="~/assets/images/category-icon/08.png" alt="">
-                                            </div>
-                                            <div class="col-lg-9 col-md-9 col-9 col-sm-9 col-xl-9 col-xxl-9">
-                                                <span>Video Cameras</span>
+                                @foreach (Category mainCategory in Model.Categories.Where(c=>c.IsMain).Take(9))
+                                {
 
+                                     <li class="laptopMac">
+                                        <a href="">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-3 col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3">
+                                                    <img src="~/assets/images/category-icon/@mainCategory.Image" alt="">
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-6 col-sm-6 col-xl-6 col-xxl-6">
+                                                    <span>@mainCategory.Name</span>
+                                                </div>
+                                                @if (mainCategory.Children != null && mainCategory.Children.Count() > 1)
+                                                {
+                                                    <div class="col-lg-1 col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1">
+                                                        <i class="fa-solid fa-angle-right"></i>
+                                                    </div>
+                                                }
                                             </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="Accessories">
-                                    <a href="">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-3 col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3">
-                                                <img src="~/assets/images/category-icon/09.png" alt="">
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-6 col-sm-6 col-xl-6 col-xxl-6">
-                                                <span>Accessories</span>
+                                        </a>
+                                    @if(mainCategory.Children!=null && mainCategory.Children.Count() > 1)
+                                    {
+                                        <div class="megaMenuListSubList">
+                                            <div class="row">
+                                                @foreach (Category child in mainCategory.Children.Take(2))
+                                                {
+                                                <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
+                                                    <h2>
+                                                       @child.Name
+                                                    </h2>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="">Networking & Internet Devices</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="">Shop All</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
 
-                                            </div>
-                                            <div class="col-lg-1 col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1">
-                                                <i class="fa-solid fa-angle-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="megaMenuListSubList6">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
-                                                <h2>Laptop & Mac</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="">Networking & Internet Devices</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Laptops, Desktops & Monitors</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Hard Drives & Memory Cards</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Computer Accessories</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Software</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Shop all</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
-                                                <h2>Audio & Video</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="">Headphones</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Home Entertainment Systems</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Hard Drives & Memory Cards</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Shop all</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4 rightOnSubCategoryList">
-                                                <div class="row">
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Phone</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-01.png" alt="">
+                                                }
+
+                                                <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4 rightOnSubCategoryList">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+                                                            <div class="row align-items-center boxForSubCategoryList">
+                                                                <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
+                                                                    <h1>Phone</h1>
+                                                                    <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+                                                                </div>
+                                                                <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
+                                                                    <img src="~/assets/images/menu/menu-01.png" alt="">
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Computer</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-02.png" alt="">
+                                                        <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+                                                            <div class="row align-items-center boxForSubCategoryList">
+                                                                <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
+                                                                    <h1>Computer</h1>
+                                                                    <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+                                                                </div>
+                                                                <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
+                                                                    <img src="~/assets/images/menu/menu-02.png" alt="">
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Headphones</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-03.png" alt="">
+                                                        <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
+                                                            <div class="row align-items-center boxForSubCategoryList">
+                                                                <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
+                                                                    <h1>Headphones</h1>
+                                                                    <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+                                                                </div>
+                                                                <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
+                                                                    <img src="~/assets/images/menu/menu-03.png" alt="">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="Security">
-                                    <a href="">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-3 col-md-3 col-3 col-sm-3 col-xl-3 col-xxl-3">
-                                                <img src="~/assets/images/category-icon/10.png" alt="">
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-6 col-sm-6 col-xl-6 col-xxl-6">
-                                                <span>Security</span>
+                                         }
+                                     </li>
 
-                                            </div>
-                                            <div class="col-lg-1 col-md-1 col-1 col-sm-1 col-xl-1 col-xxl-1">
-                                                <i class="fa-solid fa-angle-right"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="megaMenuListSubList7">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
-                                                <h2>Laptop & Mac</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="">Networking & Internet Devices</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Laptops, Desktops & Monitors</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Hard Drives & Memory Cards</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Computer Accessories</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Software</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Shop all</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4">
-                                                <h2>Audio & Video</h2>
-                                                <ul>
-                                                    <li>
-                                                        <a href="">Headphones</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Home Entertainment Systems</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Hard Drives & Memory Cards</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">Shop all</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4 col-xxl-4 col-xl-4 col-md-4 col-sm-4 col-4 rightOnSubCategoryList">
-                                                <div class="row">
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Phone</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-01.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Computer</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-02.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12 col-xxl-12 col-xl-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="row align-items-center boxForSubCategoryList">
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <h1>Headphones</h1>
-                                                                <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-                                                            </div>
-                                                            <div class="col-lg-6 col-xxl-6 col-xl-6 col-md-6 col-sm-6 col-6">
-                                                                <img src="~/assets/images/menu/menu-03.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                                    
+                                }
+                                </ul>
                         </div>
 
                     </div>
@@ -911,17 +296,8 @@
                 <div class="col-lg-7">
                     <ul class="mainNav">
                         <li class="homeOnMainNav">
-                            <a href="index.html">Home</a>
-                            <ul class="homeOnMainNavList">
-                                <li><i class="fa-solid fa-chevron-right"></i>Home Layout1</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Home Layout2</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Home Layout3</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Home Layout4</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Home Layout5</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Home Layout6</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Home Layout7</li>
-                            </ul>
-                        </li>
+                            <a asp-controller="home" asp-action="index">Home</a>
+                            </li>
                         <li class="shopOnMainNav">
                             <a asp-controller="shop" asp-action="index">Shop</a>
                             <ul class="homeOnMainNavList">
@@ -932,71 +308,10 @@
                         </li>
                         <li class="featuresOnMainNav">
                             <a href="">Features</a>
-                            <ul class="homeOnMainNavList">
-                                <li><i class="fa-solid fa-chevron-right"></i>Lorem ipsum dolor sit amet.</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Lorem ipsum dolor sit.</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Lorem ipsum dolor sit.</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Lorem, ipsum dolor.</li>
-                            </ul>
+
                         </li>
                         <li class="electronicsOnMainNav">
                             <a href="">Electronics</a>
-                            <div class="row electronicsBigMenu">
-                                <div class="col-lg-12">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <ul class="homeOnMainNavList">
-                                                <li>Accessories</li>
-                                                <li>404 Page</li>
-                                                <li>Category</li>
-                                                <li>Brand</li>
-                                                <li>FAQ</li>
-                                                <li>Order Tracking</li>
-                                                <li>Terms & Conditions</li>
-                                                <li>Single Product</li>
-                                                <li>Shop All</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <ul class="homeOnMainNavList">
-                                                <li>Laptop & Computer</li>
-                                                <li>404 Page</li>
-                                                <li>Brand</li>
-                                                <li>FAQ</li>
-                                                <li>Order Tracking</li>
-                                                <li>Terms & Conditions</li>
-                                                <li>Single Product</li>
-                                                <li>Shop All</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <ul class="homeOnMainNavList">
-                                                <li>Audio & Video</li>
-                                                <li>404 Page</li>
-                                                <li>Brand</li>
-                                                <li>FAQ</li>
-                                                <li>Shop All</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <ul class="homeOnMainNavList">
-                                                <li>Home Audio</li>
-                                                <li>404 Page</li>
-                                                <li>Brand</li>
-                                                <li>FAQ</li>
-                                                <li>Order Tracking</li>
-                                                <li>Terms & Conditions</li>
-                                                <li>Single Product</li>
-                                                <li>Shop All</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 bottomOnElectronicsBigMenu">
-                                    <img src="~/assets/images/submenu/submenu-01.png" alt="">
-                                    <img src="~/assets/images/submenu/submenu-02.png" alt="">
-                                </div>
-                            </div>
                         </li>
                         <li class="pagesOnMainNav">
                             <a href="">Pages</a>
@@ -1013,19 +328,11 @@
                         </li>
                         <li class="blogOnMainNav">
                             <a asp-controller="blog" asp-action="index">Blog</a>
-                            <ul class="homeOnMainNavList">
-                                <li><i class="fa-solid fa-chevron-right"></i>Blog left sidebar</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Blog right sidebar</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Blog Lorem, ipsum.</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Blog Lorem, ipsum.</li>
-                            </ul>
+
                         </li>
                         <li class="contactOnMainNav">
-                            <a href="contact.html">Contact</a>
-                            <ul class="homeOnMainNavList">
-                                <li><i class="fa-solid fa-chevron-right"></i>Contact</li>
-                                <li><i class="fa-solid fa-chevron-right"></i>Contact2</li>
-                            </ul>
+                            <a asp-controller="contact" asp-action="index">Contact</a>
+
                         </li>
                     </ul>
                 </div>

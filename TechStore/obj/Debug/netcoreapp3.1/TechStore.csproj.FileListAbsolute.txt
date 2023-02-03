@@ -205,3 +205,8 @@ C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Ar
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\SpecialOffer\Index.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\ShopBanner\Index.cshtml.g.cs
 C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\ShopBanner\Update.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\SpecialOffer\Update.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\SpecialOffer\Create.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\MostViewed\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\ProductGeneral\Default.cshtml.g.cs
+C:\Users\irade\source\repos\TechStore\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductOnShopPartialView.cshtml.g.cs

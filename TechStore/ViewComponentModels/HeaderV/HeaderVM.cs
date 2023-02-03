@@ -12,5 +12,7 @@ namespace TechStore.ViewComponentModels.HeaderV
         public Dictionary<string, string> Settings { get; set; }
         public IEnumerable<Category> Categories { get; set; }
         public IEnumerable<BasketVM> BasketVMs { get; set; }
+        public IEnumerable<Product> Products { get; set; }
+
     }
 }

@@ -31,7 +31,8 @@ namespace TechStore.Services
 
         public async Task<IEnumerable<Category>> GetCategoriesAsync()
         {
-            return await _context.Categories.Include(c => c.Children).Where(c => c.IsDeleted == false & c.IsMain).ToListAsync();
+            return await _context.Categories.Include(c => c.Children)
+                .Where(c => c.IsDeleted == false && c.IsMain).ToListAsync();
 
         }
 
@@ -56,6 +57,11 @@ namespace TechStore.Services
             }
             return basketVMs;
 
+        }
+
+        public async Task<IEnumerable<Product>> GetProductAsync()
+        {
+            return await _context.Products.Where(c => c.IsDeleted == false).ToListAsync();
         }
     }
 }

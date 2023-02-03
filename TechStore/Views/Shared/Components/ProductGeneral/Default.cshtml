@@ -1,40 +1,39 @@
 ﻿@model IEnumerable<Product>
 
-@foreach (Product item in Model.Take(8))
+@foreach (Product product in Model)
 {
 
-    <div id="product1" class="col-lg-3 col-xxl-3 col-xl-3 col-md-6 col-sm-6 col-12">
-
+    <div id="product1" class="col-lg-4 col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
         <div class="imageAndTextBox">
             <div class="productBoxesSectionSliderForSingleProduct1">
                 <div class="box">
-                    <img width="100%" src="assets/images/product/@item.MainImage" alt="">
+                    <img src="assets/images/product/@product.MainImage" alt="">
                 </div>
             </div>
             <div class="textPart">
                 <div class="title d-flex justify-content-center">
                     <span>-</span>
                     <div class="text">
-                        @item.Category.Name
+                        @product.Category.Name
                     </div>
                 </div>
                 <div class="productDescription">
-                    <a href="shop.html">@item.Name</a>
+                    <a href="shop.html">@product.Name</a>
                 </div>
                 <div class="priceSection d-flex">
                     <div class="discount">
-                        $@item.Price
+                        $@product.DiscountedPrice
                     </div>
                     <div class="sale">
                         <del>
-                            $@item.DiscountedPrice
+                            $@product.Price
                         </del>
                     </div>
                 </div>
             </div>
             <div class="onHoverBasketCompareWishList">
                 <div class="top">
-                    <a class="addtobasket" asp-controller="basket" asp-action="addtobasket" asp-route-id="@item.Id"><img src="~/assets/images/cart.png" alt=""> <span>Add to Cart</span></a>
+                    <button><img src="assets/images/cart.png" alt=""> <span>Add to Cart</span></button>
                 </div>
                 <div class="bottom">
                     <div class="left">
@@ -48,4 +47,3 @@
         </div>
     </div>
 }
-

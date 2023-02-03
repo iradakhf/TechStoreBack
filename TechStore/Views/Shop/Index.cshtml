@@ -1,8 +1,10 @@
-﻿
+﻿@model IEnumerable<Product>
 @{
     ViewData["Title"] = "Index";
 }
-
+@{
+    int count = (ViewBag.PageIndex - 1) * 5;
+}
 <!-- main -->
 <main id="shopMain">
     <!-- breadcrumb -->
@@ -25,448 +27,73 @@
                             <div id="dotsForBestSeller"><a href="">Best Seller</a></div>
                         </div>
                         <div class="productBoxes row justify-content-between">
-                          @await Component.InvokeAsync("BestSellerSingle") 
-                         
+                            @await Component.InvokeAsync("BestSellerSingle")
+
                         </div>
                     </div>
                 </section>
                 <section id="SortProduct">
                     <div class="container">
                         <div class="productTab d-flex justify-content-between">
-                            <a href="">Mobile & Tablet</a> <span>Showing 1-15 of 20 results</span>
+                            <a href="">Products</a>
                         </div>
-                        <div class="menuproductTab d-flex justify-content-between align-items-center">
-                            <div class="iconListImg">
-                                <img src="assets/images/list-1.png" alt="">
-                                <img src="assets/images/list-2.png" alt="">
-                            </div>
-                            <div class="right d-flex">
-                                <div class="popularity">
-                                    <select name="popularity" id="">
-                                        <option value="">Sort by popularity</option>
-                                        <option value="">Sort by popularity</option>
-                                        <option value="">Sort by popularity</option>
-                                        <option value="">Sort by popularity</option>
-                                    </select>
-                                </div>
-                                <div class="Show">
-                                    <select name="show 15" id="">
-                                        <option value="">Show 25</option>
-                                        <option value="">Show 16</option>
-                                        <option value="">Show 38</option>
-                                        <option value="">Show 90</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="productBox">
                             <div class="row justify-content-between">
-                                <div id="product1" class="col-lg-4 col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
-                                    <div class="imageAndTextBox">
-                                        <div class="productBoxesSectionSliderForSingleProduct1">
-                                            <div class="box">
-                                                <img src="assets/images/product/01.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="textPart">
-                                            <div class="title d-flex justify-content-center">
-                                                <span>-</span>
-                                                <div class="text">
-                                                    Laptop
-                                                </div>
-                                            </div>
-                                            <div class="productDescription">
-                                                <a href="shop.html">Apple iPad Mini <br> G2356</a>
-                                            </div>
-                                            <div class="priceSection d-flex">
-                                                <div class="discount">
-                                                    $1,255.00
-                                                </div>
-                                                <div class="sale">
-                                                    <del>
-                                                        $2,999.11
-                                                    </del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="onHoverBasketCompareWishList">
-                                            <div class="top">
-                                                <button><img src="assets/images/cart.png" alt=""> <span>Add to Cart</span></button>
-                                            </div>
-                                            <div class="bottom">
-                                                <div class="left">
-                                                    <a href="compare.html"><img src="assets/images/compare.png" alt=""> Compare</a>
-                                                </div>
-                                                <div class="right">
-                                                    <a href="wishlist.html"><img src="assets/images/wishlist.png" alt=""> Wishlist</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="product1" class="col-lg-4 col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
-                                    <div class="imageAndTextBox">
-                                        <div class="productBoxesSectionSliderForSingleProduct1">
-                                            <div class="box">
-                                                <img src="assets/images/product/02.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="textPart">
-                                            <div class="title d-flex justify-content-center">
-                                                <span>-</span>
-                                                <div class="text">
-                                                    Laptop
-                                                </div>
-                                            </div>
-                                            <div class="productDescription">
-                                                <a href="shop.html">Apple iPad Mini <br> G2356</a>
-                                            </div>
-                                            <div class="priceSection d-flex">
-                                                <div class="discount">
-                                                    $1,255.00
-                                                </div>
-                                                <div class="sale">
-                                                    <del>
-                                                        $2,999.11
-                                                    </del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="onHoverBasketCompareWishList">
-                                            <div class="top">
-                                                <button><img src="assets/images/cart.png" alt=""> <span>Add to Cart</span></button>
-                                            </div>
-                                            <div class="bottom">
-                                                <div class="left">
-                                                    <a href="compare.html"><img src="assets/images/compare.png" alt=""> Compare</a>
-                                                </div>
-                                                <div class="right">
-                                                    <a href="wishlist.html"><img src="assets/images/wishlist.png" alt=""> Wishlist</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="product1" class="col-lg-4 col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
-                                    <div class="imageAndTextBox">
-                                        <div class="productBoxesSectionSliderForSingleProduct1">
-                                            <div class="box">
-                                                <img src="assets/images/product/03.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="textPart">
-                                            <div class="title d-flex justify-content-center">
-                                                <span>-</span>
-                                                <div class="text">
-                                                    Laptop
-                                                </div>
-                                            </div>
-                                            <div class="productDescription">
-                                                <a href="shop.html">Apple iPad Mini <br> G2356</a>
-                                            </div>
-                                            <div class="priceSection d-flex">
-                                                <div class="discount">
-                                                    $1,255.00
-                                                </div>
-                                                <div class="sale">
-                                                    <del>
-                                                        $2,999.11
-                                                    </del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="onHoverBasketCompareWishList">
-                                            <div class="top">
-                                                <button><img src="assets/images/cart.png" alt=""> <span>Add to Cart</span></button>
-                                            </div>
-                                            <div class="bottom">
-                                                <div class="left">
-                                                    <a href="compare.html"><img src="assets/images/compare.png" alt=""> Compare</a>
-                                                </div>
-                                                <div class="right">
-                                                    <a href="wishlist.html"><img src="assets/images/wishlist.png" alt=""> Wishlist</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="product1" class="col-lg-4 col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
-                                    <div class="imageAndTextBox">
-                                        <div class="productBoxesSectionSliderForSingleProduct1">
-                                            <div class="box">
-                                                <img src="assets/images/product/05.jpg" alt="">
-                                            </div>
-
-                                        </div>
-                                        <div class="textPart">
-                                            <div class="title d-flex justify-content-center">
-                                                <span>-</span>
-                                                <div class="text">
-                                                    Laptop
-                                                </div>
-                                            </div>
-                                            <div class="productDescription">
-                                                <a href="shop.html">Apple iPad Mini <br> G2356</a>
-                                            </div>
-                                            <div class="priceSection d-flex">
-                                                <div class="discount">
-                                                    $1,255.00
-                                                </div>
-                                                <div class="sale">
-                                                    <del>
-                                                        $2,999.11
-                                                    </del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="onHoverBasketCompareWishList">
-                                            <div class="top">
-                                                <button><img src="assets/images/cart.png" alt=""> <span>Add to Cart</span></button>
-                                            </div>
-                                            <div class="bottom">
-                                                <div class="left">
-                                                    <a href="compare.html"><img src="assets/images/compare.png" alt=""> Compare</a>
-                                                </div>
-                                                <div class="right">
-                                                    <a href="wishlist.html"><img src="assets/images/wishlist.png" alt=""> Wishlist</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="product1" class="col-lg-4 col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
-                                    <div class="imageAndTextBox">
-                                        <div class="productBoxesSectionSliderForSingleProduct1">
-                                            <div class="box">
-                                                <img src="assets/images/product/04.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="textPart">
-                                            <div class="title d-flex justify-content-center">
-                                                <span>-</span>
-                                                <div class="text">
-                                                    Laptop
-                                                </div>
-                                            </div>
-                                            <div class="productDescription">
-                                                <a href="shop.html">Apple iPad Mini <br> G2356</a>
-                                            </div>
-                                            <div class="priceSection d-flex">
-                                                <div class="discount">
-                                                    $1,255.00
-                                                </div>
-                                                <div class="sale">
-                                                    <del>
-                                                        $2,999.11
-                                                    </del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="onHoverBasketCompareWishList">
-                                            <div class="top">
-                                                <button><img src="assets/images/cart.png" alt=""> <span>Add to Cart</span></button>
-                                            </div>
-                                            <div class="bottom">
-                                                <div class="left">
-                                                    <a href="compare.html"><img src="assets/images/compare.png" alt=""> Compare</a>
-                                                </div>
-                                                <div class="right">
-                                                    <a href="wishlist.html"><img src="assets/images/wishlist.png" alt=""> Wishlist</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="product1" class="col-lg-4 col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
-                                    <div class="imageAndTextBox">
-                                        <div class="productBoxesSectionSliderForSingleProduct1">
-                                            <div class="box">
-                                                <img src="assets/images/product/01.jpg" alt="">
-                                            </div>
-
-                                        </div>
-                                        <div class="textPart">
-                                            <div class="title d-flex justify-content-center">
-                                                <span>-</span>
-                                                <div class="text">
-                                                    Laptop
-                                                </div>
-                                            </div>
-                                            <div class="productDescription">
-                                                <a href="shop.html">Apple iPad Mini <br> G2356</a>
-                                            </div>
-                                            <div class="priceSection d-flex">
-                                                <div class="discount">
-                                                    $1,255.00
-                                                </div>
-                                                <div class="sale">
-                                                    <del>
-                                                        $2,999.11
-                                                    </del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="onHoverBasketCompareWishList">
-                                            <div class="top">
-                                                <button><img src="assets/images/cart.png" alt=""> <span>Add to Cart</span></button>
-                                            </div>
-                                            <div class="bottom">
-                                                <div class="left">
-                                                    <a href="compare.html"><img src="assets/images/compare.png" alt=""> Compare</a>
-                                                </div>
-                                                <div class="right">
-                                                    <a href="wishlist.html"><img src="assets/images/wishlist.png" alt=""> Wishlist</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="product1" class="col-lg-4 col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
-                                    <div class="imageAndTextBox">
-                                        <div class="productBoxesSectionSliderForSingleProduct1">
-                                            <div class="box">
-                                                <img src="assets/images/product/01.jpg" alt="">
-                                            </div>
-
-                                        </div>
-                                        <div class="textPart">
-                                            <div class="title d-flex justify-content-center">
-                                                <span>-</span>
-                                                <div class="text">
-                                                    Laptop
-                                                </div>
-                                            </div>
-                                            <div class="productDescription">
-                                                <a href="shop.html">Apple iPad Mini <br> G2356</a>
-                                            </div>
-                                            <div class="priceSection d-flex">
-                                                <div class="discount">
-                                                    $1,255.00
-                                                </div>
-                                                <div class="sale">
-                                                    <del>
-                                                        $2,999.11
-                                                    </del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="onHoverBasketCompareWishList">
-                                            <div class="top">
-                                                <button><img src="assets/images/cart.png" alt=""> <span>Add to Cart</span></button>
-                                            </div>
-                                            <div class="bottom">
-                                                <div class="left">
-                                                    <a href="compare.html"><img src="assets/images/compare.png" alt=""> Compare</a>
-                                                </div>
-                                                <div class="right">
-                                                    <a href="wishlist.html"><img src="assets/images/wishlist.png" alt=""> Wishlist</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="product1" class="col-lg-4 col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
-                                    <div class="imageAndTextBox">
-                                        <div class="productBoxesSectionSliderForSingleProduct1">
-                                            <div class="box">
-                                                <img src="assets/images/product/06.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="textPart">
-                                            <div class="title d-flex justify-content-center">
-                                                <span>-</span>
-                                                <div class="text">
-                                                    Laptop
-                                                </div>
-                                            </div>
-                                            <div class="productDescription">
-                                                <a href="shop.html">Apple iPad Mini <br> G2356</a>
-                                            </div>
-                                            <div class="priceSection d-flex">
-                                                <div class="discount">
-                                                    $1,255.00
-                                                </div>
-                                                <div class="sale">
-                                                    <del>
-                                                        $2,999.11
-                                                    </del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="onHoverBasketCompareWishList">
-                                            <div class="top">
-                                                <button><img src="assets/images/cart.png" alt=""> <span>Add to Cart</span></button>
-                                            </div>
-                                            <div class="bottom">
-                                                <div class="left">
-                                                    <a href="compare.html"><img src="assets/images/compare.png" alt=""> Compare</a>
-                                                </div>
-                                                <div class="right">
-                                                    <a href="wishlist.html"><img src="assets/images/wishlist.png" alt=""> Wishlist</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="product1" class="col-lg-4 col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
-                                    <div class="imageAndTextBox">
-                                        <div class="productBoxesSectionSliderForSingleProduct1">
-                                            <div class="box">
-                                                <img src="assets/images/product/06.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="textPart">
-                                            <div class="title d-flex justify-content-center">
-                                                <span>-</span>
-                                                <div class="text">
-                                                    Laptop
-                                                </div>
-                                            </div>
-                                            <div class="productDescription">
-                                                <a href="shop.html">Apple iPad Mini <br> G2356</a>
-                                            </div>
-                                            <div class="priceSection d-flex">
-                                                <div class="discount">
-                                                    $1,255.00
-                                                </div>
-                                                <div class="sale">
-                                                    <del>
-                                                        $2,999.11
-                                                    </del>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="onHoverBasketCompareWishList">
-                                            <div class="top">
-                                                <button><img src="assets/images/cart.png" alt=""> <span>Add to Cart</span></button>
-                                            </div>
-                                            <div class="bottom">
-                                                <div class="left">
-                                                    <a href="compare.html"><img src="assets/images/compare.png" alt=""> Compare</a>
-                                                </div>
-                                                <div class="right">
-                                                    <a href="wishlist.html"><img src="assets/images/wishlist.png" alt=""> Wishlist</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    @Html.Partial("_ProductOnShopPartialView")
                             </div>
                         </div>
                     </div>
                 </section>
                 <section id="PrevNext">
-                    <div class="blog-pagination d-flex justify-content-between">
-                        <span>Showing 1–15 of 20 results</span>
-                        <ul class="d-flex">
-                            <li><i class="fa-solid fa-arrow-left-long"></i> Prev Page</li>
-                            <li><a href="">01</a></li>
-                            <li><a href="">02</a></li>
-                            <li><a href="">03</a></li>
-                            <li><a href="">04</a></li>
-                            <li>Next Page <i class="fa-solid fa-arrow-right-long"></i></li>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            @if (ViewBag.PageIndex > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" asp-action="index" asp-route-page="1" aria-label="Previous" style="color:grey">
+                                        @("<<")
+
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" asp-action="index" asp-route-page="@(ViewBag.PageIndex-1)" aria-label="Previous" style="color:grey">
+                                        <i class="fa-solid fa-arrow-left-long" style="color:grey"></i> Prev Page
+
+                                    </a>
+                                </li>
+                                @if (ViewBag.PageIndex == ViewBag.PageCount && ViewBag.PageIndex > 2)
+                                {
+                                    <li style="color:grey" class="page-item"><a style="color:grey" class="page-link" asp-action="index" asp-route-page="@(ViewBag.PageIndex-2)">@(ViewBag.PageIndex-2)</a></li>
+                                }
+                                <li style="color:grey" class="page-item"><a style="color:grey" class="page-link" asp-action="index" asp-route-page="@(ViewBag.PageIndex-1)">@(ViewBag.PageIndex-1)</a></li>
+                            }
+
+                            <li style="color:grey" class="page-item active"><a style="color:grey" class="page-link" asp-action="index" asp-route-page="@ViewBag.PageIndex">@ViewBag.PageIndex</a></li>
+
+                            @if (ViewBag.PageIndex < ViewBag.PageCount)
+                            {
+                                <li style="color:grey" class="page-item"><a style="color:grey" class="page-link" asp-action="index" asp-route-page="@(ViewBag.PageIndex + 1)">@(ViewBag.PageIndex + 1)</a></li>
+                                @if (ViewBag.PageIndex == 1 && (ViewBag.PageIndex + 2) < ViewBag.PageCount)
+                                {
+                                    <li style="color:grey" class="page-item"><a style="color:grey" class="page-link" asp-action="index" asp-route-page="@(ViewBag.PageIndex+2)">@(ViewBag.PageIndex+2)</a></li>
+                                }
+                                <li style="color:grey" class="page-item">
+                                    <a style="color:grey" class="page-link" asp-route-page="@(ViewBag.PageIndex + 1)" aria-label="Next">
+                                        Next Page <i class="fa-solid fa-arrow-right-long"></i>
+
+                                    </a>
+                                </li>
+                                <li style="color:grey" class="page-item">
+                                    <a style="color:grey" class="page-link" asp-action="index" asp-route-page="@ViewBag.PageCount" aria-label="Next">
+                                        @(">>")
+
+                                    </a>
+                                </li>
+                            }
                         </ul>
-                    </div>
+                    </nav>
+                   
                 </section>
             </div>
             <div class="col-lg-3 col-xl-3 col-xxl-3 col-md-3 col-sm-12 col-12 RIGHTonShop">
@@ -474,8 +101,8 @@
                     <div class="category"><a href="">Categories</a><i class="fa-solid fa-minus"></i></div>
                 </div>
                 <ul class="categoryList">
-                   @await Component.InvokeAsync("Category")
-                    
+                    @await Component.InvokeAsync("Category")
+
                 </ul>
                 <div class="price">
                     <div class="priceTab">
@@ -507,7 +134,7 @@
                         </div>
                         <div class="context">
 
-                           @await Component.InvokeAsync("Brand")
+                            @await Component.InvokeAsync("Brand")
                         </div>
                     </div>
 
@@ -533,7 +160,7 @@
                     </div>
                     <div class="bestsellerPart">
                         <div class="basket">
-                           @await Component.InvokeAsync("BestSellerOnSide")
+                            @await Component.InvokeAsync("BestSellerOnSide")
                         </div>
                     </div>
 
