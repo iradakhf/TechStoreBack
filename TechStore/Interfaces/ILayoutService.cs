@@ -11,6 +11,7 @@ namespace TechStore.Interfaces
     {
         Task<Dictionary<string, string>> GetSettingsAsync();
         Task<IEnumerable<Category>> GetCategoriesAsync();
+        Task<List<BasketVM>> GetBasket();
         Task<IEnumerable<Product>> GetProductAsync();
     }
 }

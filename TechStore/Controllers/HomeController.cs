@@ -20,23 +20,7 @@ namespace TechStore.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            string basket = HttpContext.Request.Cookies["basket"];
-
-            List<BasketVM> basketVMs = null;
-
-            if (basket != null)
-            {
-                basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-            }
-            else
-            {
-                basketVMs = new List<BasketVM>();
-            }
-
-            ViewBag.Basket = basketVMs;
-
-
-            return View(await _context.Products.ToListAsync());
+            return View();
         }
     }
 }

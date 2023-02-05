@@ -3,7 +3,7 @@
 @{
     Dictionary<string, string> settings = await layoutservices.GetSettingsAsync();
     IEnumerable<Category> categories = await layoutservices.GetCategoriesAsync();
-    List<BasketVM> basketVMs = ViewBag.Basket;
+    List<BasketVM> basketVMs = await layoutservices.GetBasket();
     IEnumerable<Product> products = await layoutservices.GetProductAsync();
     HeaderVM headerVM = new HeaderVM
     {

@@ -431,3 +431,5 @@ C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValideFormPartial.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\Login.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Basket\Index.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketPartial.cshtml.g.cs

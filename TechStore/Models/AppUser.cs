@@ -14,5 +14,10 @@ namespace TechStore.Models
         [StringLength(255)]
         public string SurName { get; set; }
         public bool IsAdmin { get; set; }
+        public bool IsDeleted { get; set; }
+        public Nullable<DateTime> CreatedAt { get; set; }
+        public Nullable<DateTime> DeletedAt { get; set; }
+        public Nullable<DateTime> UpdatedAt { get; set; }
+        public List<Basket> Baskets { get; set; }
     }
 }

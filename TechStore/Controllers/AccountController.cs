@@ -1,11 +1,15 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TechStore.DAL;
 using TechStore.Models;
 using TechStore.ViewModels.Account;
+using TechStore.ViewModels.Basket;
 
 namespace TechStore.Controllers
 {
@@ -14,11 +18,15 @@ namespace TechStore.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
-        public AccountController(RoleManager<IdentityRole> roleManager, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        private readonly AppDbContext _context;
+        public AccountController(RoleManager<IdentityRole> roleManager,
+            UserManager<AppUser> userManager,
+            SignInManager<AppUser> signInManager, AppDbContext context)
         {
             _roleManager = roleManager;
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
         [HttpGet]
         public IActionResult Register()
@@ -56,6 +64,8 @@ namespace TechStore.Controllers
 
             return Content("ok");
         }
+
+
         [HttpGet]
         public IActionResult Login()
         {
@@ -64,6 +74,7 @@ namespace TechStore.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginVM loginVM)
         {
             if (!ModelState.IsValid)
@@ -71,7 +82,7 @@ namespace TechStore.Controllers
                 return View(loginVM);
             }
 
-            AppUser appUser = await _userManager.FindByEmailAsync(loginVM.Email);
+            AppUser appUser = await _userManager.Users.Include(u => u.Baskets).FirstOrDefaultAsync(u => u.NormalizedEmail == loginVM.Email.Trim().ToUpperInvariant());
 
             if (appUser == null)
             {
@@ -92,6 +103,81 @@ namespace TechStore.Controllers
             }
 
             await _signInManager.SignInAsync(appUser, loginVM.RemindMe);
+
+            string basketCoockie = HttpContext.Request.Cookies["basket"];
+
+            if (!string.IsNullOrWhiteSpace(basketCoockie))
+            {
+                List<BasketVM> basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basketCoockie);
+
+                List<Basket> baskets = new List<Basket>();
+
+                foreach (BasketVM basketVM in basketVMs)
+                {
+                    if (appUser.Baskets != null && appUser.Baskets.Count() > 0)
+                    {
+                        Basket exsitedBasket = appUser.Baskets.FirstOrDefault(b => b.ProductId != basketVM.ProductId);
+
+                        if (exsitedBasket == null)
+                        {
+                            Basket basket = new Basket
+                            {
+                                AppUserId = appUser.Id,
+                                ProductId = basketVM.ProductId,
+                                Count = basketVM.Count
+                            };
+
+                            baskets.Add(basket);
+                        }
+                        else
+                        {
+                            //exsitedBasket.Count = basketVM.Count;
+                            exsitedBasket.Count += basketVM.Count;
+                            basketVM.Count = exsitedBasket.Count;
+                        }
+                    }
+                    else
+                    {
+                        Basket basket = new Basket
+                        {
+                            AppUserId = appUser.Id,
+                            ProductId = basketVM.ProductId,
+                            Count = basketVM.Count
+                        };
+
+                        baskets.Add(basket);
+                    }
+                }
+
+                basketCoockie = JsonConvert.SerializeObject(basketVMs);
+
+                HttpContext.Response.Cookies.Append("basket", basketCoockie);
+
+                await _context.Baskets.AddRangeAsync(baskets);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                if (appUser.Baskets != null && appUser.Baskets.Count() > 0)
+                {
+                    List<BasketVM> basketVMs = new List<BasketVM>();
+
+                    foreach (Basket basket in appUser.Baskets)
+                    {
+                        BasketVM basketVM = new BasketVM
+                        {
+                            ProductId = basket.ProductId,
+                            Count = basket.Count
+                        };
+
+                        basketVMs.Add(basketVM);
+                    }
+
+                    basketCoockie = JsonConvert.SerializeObject(basketVMs);
+
+                    HttpContext.Response.Cookies.Append("basket", basketCoockie);
+                }
+            }
 
             return RedirectToAction("index", "home");
         }

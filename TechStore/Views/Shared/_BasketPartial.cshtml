@@ -1,0 +1,41 @@
+﻿@model List<BasketVM>
+
+@foreach (var item in Model)
+{
+<tr>
+    <td>
+        <div class="image">
+            <img src="~/assets/images/product/@item.Image" alt="">
+        </div>
+        <div class="name">
+            <p>
+               @item.Title
+            </p>
+        </div>
+        <div class="price">
+            <p>$@item.Price</p>
+        </div>
+    </td>
+    <td id="inputForCount">
+        <div class="inputForCount">
+            <i class="fa-solid fa-minus"></i>8<i class="fa-solid fa-plus"></i>
+        </div>
+    </td>
+    <td>
+        <div class="row">
+            <div class="col-lg-6 col-xxl-6 col-xl-6 col-6 col-md-6 col-sm-6">
+                <div class="totalPrice">
+                    $5.225
+                </div>
+            </div>
+            <div class="col-lg-6 col-xxl-6 col-xl-6 col-6 col-md-6 col-sm-6">
+                <div class="trash">
+                    <img src="~/assets/images/delete.png" alt="">
+                </div>
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+}

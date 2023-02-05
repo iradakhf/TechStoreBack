@@ -1,0 +1,126 @@
+﻿@model List<BasketVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- main -->
+<main id="cartMain">
+    <div class="breadcrumbGeneral">
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><span>Home</span> <i class="fa-solid fa-arrow-right-long"></i></a></li>
+                <li><a href="shop.html"><span>Shop</span> <i class="fa-solid fa-arrow-right-long"></i></a></li>
+                <li><a href="#"></a><span>Smartphones</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="generalCart">
+            <div class="row">
+                <div class="col-lg-8 col-xl-8 col-xxl-8 col-12 col-md-12 col-sm-12">
+                    <div class="leftCart">
+                        <h3>Shooping Cart</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @await Html.PartialAsync("_BasketPartial", Model)
+                            </tbody>
+                        </table>
+                        <div class="coupon d-flex justify-content-center">
+                            <input type="text" placeholder="Coupon Code">
+                            <button>Apply Coupon</button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-xl-4 col-xxl-4 col-sm-12 col-md-12 col-12">
+                    <div class="rightCart">
+                        <h3>Cart Totals</h3>
+                        <div class="subtotal d-flex">
+                            <p>Subtotal</p>
+                            <div class="subtotalPrice">$3333</div>
+                        </div>
+                        <div class="shipping d-flex">
+                            <p>Shipping</p>
+                            <div class="rightPartForShipping">
+                                <div class="flatRate">
+                                    <input type="checkbox">
+                                    <span>Flat Rate: <span>$3.00</span></span>
+                                </div>
+                                <div class="free">
+                                    <input type="checkbox">
+                                    <span>Free Shipping</span>
+                                </div>
+                                <p class="calculateShipping">Calculate Shipping</p>
+                            </div>
+                        </div>
+                        <div class="total">
+                            <p>Total</p>
+                            <div class="totalPrice">$3333</div>
+                        </div>
+                        <div class="buttons">
+                            <button id="firstBtn">
+                                Update Cart
+                            </button>
+                            <button id="ProceedToCheckout">
+                                Proceed To Checkout
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="servicesCart">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-2-5 col-xl-2-5 col-xxl-2-5 col-md-5 col-sm-5 col-12 boox">
+                    <div class="img">
+                        <img src="~/assets/images/car.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Worldwide Shipping</h3>
+                        <p>Free Shipping On Order Over $100</p>
+                    </div>
+                </div>
+                <div class="col-lg-2-5 col-xl-2-5 col-xxl-2-5 col-md-5 col-sm-5 col-12 boox">
+                    <div class="img">
+                        <img src="~/assets/images/order.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Order Online Service</h3>
+                        <p>Free Shipping On Order Over $100</p>
+                    </div>
+                </div>
+                <div class="col-lg-2-5 col-xl-2-5 col-xxl-2-5 col-md-5 col-sm-5 col-12 boox">
+                    <div class="img">
+                        <img src="~/assets/images/payment.png" alt="">
+
+                    </div>
+                    <div class="text">
+                        <h3>Payment</h3>
+                        <p>Free Shipping On Order Over $100</p>
+                    </div>
+                </div>
+                <div class="col-lg-2-5 col-xl-2-5 col-xxl-2-5 col-md-5 col-sm-5 col-12 boox">
+                    <div class="img">
+                        <img src="~/assets/images/return.png" alt="">
+
+                    </div>
+                    <div class="text">
+                        <h3>Return 30 Days</h3>
+                        <p>Free Shipping On Order Over $100</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

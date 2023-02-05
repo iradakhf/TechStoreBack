@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
@@ -14,11 +15,30 @@ namespace TechStore.Controllers
     public class BasketController : Controller
     {
         private readonly AppDbContext _context;
-        public BasketController(AppDbContext context)
+        private readonly UserManager<AppUser> _userManager;
+
+        public BasketController(AppDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
+        public async Task<IActionResult> Index()
+        {
+            string basket = HttpContext.Request.Cookies["basket"];
 
+            List<BasketVM> basketVMs = null;
+
+            if (!string.IsNullOrWhiteSpace(basket))
+            {
+                basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+            }
+            else
+            {
+                basketVMs = new List<BasketVM>();
+            }
+
+            return View(await _getBasketItemAsync(basketVMs));
+        }
         public async Task<IActionResult> AddToBasket(int? id)
         {
             if (id == null)
@@ -37,7 +57,7 @@ namespace TechStore.Controllers
 
             List<BasketVM> basketVMs = null;
 
-            if (basket != null)
+            if (!string.IsNullOrWhiteSpace(basket))
             {
                 basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
             }
@@ -55,23 +75,56 @@ namespace TechStore.Controllers
                 BasketVM basketVM = new BasketVM
                 {
                     ProductId = product.Id,
-                    Count = 1,
-                    Image = product.MainImage,
-                    Title = product.Name,
-                    Price = product.DiscountedPrice > 0 ? product.DiscountedPrice : product.Price
+                    Count = 1
                 };
 
                 basketVMs.Add(basketVM);
             }
 
+            if (User.Identity.IsAuthenticated)
+            {
+                AppUser appUser = await _userManager.Users.Include(u => u.Baskets).FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
+
+                if (appUser.Baskets != null && appUser.Baskets.Count() > 0)
+                {
+                    Basket dbBasket = appUser.Baskets.FirstOrDefault(b => b.ProductId == id);
+
+                    if (dbBasket != null)
+                    {
+                        dbBasket.Count += 1;
+                    }
+                    else
+                    {
+                        Basket newBasket = new Basket
+                        {
+                            ProductId = (int)id,
+                            Count = 1
+                        };
+
+                        appUser.Baskets.Add(newBasket);
+                    }
+                }
+                else
+                {
+                    List<Basket> baskets = new List<Basket>
+                    {
+                        new Basket{ProductId = (int)id, Count = 1}
+                    };
+
+                    appUser.Baskets = baskets;
+                }
+
+                await _context.SaveChangesAsync();
+            }
 
             basket = JsonConvert.SerializeObject(basketVMs);
 
             HttpContext.Response.Cookies.Append("basket", basket);
 
-            return PartialView("_BasketCartPartial", basketVMs);
+            return PartialView("_BasketPartial", await _getBasketItemAsync(basketVMs));
         }
-        public async Task<IActionResult> DeleteFromBasket(int? id)
+
+        public async Task<IActionResult> DeleteFromCart(int? id)
         {
             if (id == null) return BadRequest();
 
@@ -92,21 +145,29 @@ namespace TechStore.Controllers
             basket = JsonConvert.SerializeObject(basketVMs);
             HttpContext.Response.Cookies.Append("basket", basket);
 
-            return PartialView("_BasketCartPartial", await _getBasketItemAsync(basketVMs));
+            return PartialView("_BasketIndexPartial", await _getBasketItemAsync(basketVMs));
         }
         private async Task<List<BasketVM>> _getBasketItemAsync(List<BasketVM> basketVMs)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                AppUser appUser = await _userManager.Users.Include(u => u.Baskets).FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
+
+
+            }
+
+
             foreach (BasketVM item in basketVMs)
             {
                 Product dbProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == item.ProductId);
 
                 item.Title = dbProduct.Name;
-                item.Price = dbProduct.Price > 0 ? dbProduct.Price : dbProduct.DiscountedPrice;
+                item.Price = dbProduct.DiscountedPrice > 0 ? dbProduct.DiscountedPrice : dbProduct.Price;
                 item.Image = dbProduct.MainImage;
             }
 
             return basketVMs;
         }
-        
+
     }
 }
