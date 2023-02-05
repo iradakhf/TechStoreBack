@@ -36,28 +36,7 @@ namespace TechStore.Services
 
         }
 
-        public async Task<IEnumerable<BasketVM>> GetBasketVMsAsync()
-        {
-            string basket = _httpContextAccessor.HttpContext.Request.Cookies["basket"];
-            List<BasketVM> basketVMs = null;
-            if (!string.IsNullOrWhiteSpace(basket))
-            {
-                basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-            }
-            else
-            {
-                basketVMs = new List<BasketVM>();
-            }
-            foreach (BasketVM item in basketVMs)
-            {
-                Product product = await _context.Products.FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == item.Id);
-                item.Title = product.Name;
-                item.Image = product.MainImage;
-                item.Price = product.DiscountedPrice > 0 ? product.DiscountedPrice : product.Price;
-            }
-            return basketVMs;
-
-        }
+       
 
         public async Task<IEnumerable<Product>> GetProductAsync()
         {

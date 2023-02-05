@@ -6156,4 +6156,25 @@ body footer .bottom p {
   font-size: 13px;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
+}
+
+#login {
+  background-color: rgb(250, 248, 248);
+}
+#login form {
+  margin: 6rem 0;
+  background-color: white;
+  padding: 4rem 2rem;
+  border-radius: 15px;
+}
+#login form input {
+  border-radius: 20px;
+}
+#login form button {
+  border-radius: 30px;
+  margin-top: 20px;
+  padding: 1rem 2rem;
+}
+#login form h1 {
+  margin-bottom: 6rem;
 }/*# sourceMappingURL=style.css.map */

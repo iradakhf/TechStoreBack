@@ -4,23 +4,22 @@
         e.preventDefault();
         let url = $(this).attr("href");
         fetch(url)
-            .then(response => {
-            return response.text()
-            }).then(data => {
+            .then(response => 
+             response.text()
+            ).then(data => {
                 $("#headerCart").html(data)
 
             }
             )
     })
    
-    $("#closeIconforCartProduct").click(
-        function (e) {
+    $(document).on('click', '#closeIconforCartProduct', function (e) { 
         e.preventDefault();
         let url = $(this).attr("href");
         fetch(url)
-            .then(response => {
-                return response.text()
-            }).then(data => {
+            .then(response => 
+                 response.text()
+            ).then(data => {
                 $("#headerCart").html(data);
             })
        

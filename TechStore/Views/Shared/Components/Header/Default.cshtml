@@ -30,11 +30,8 @@
                             <i id="triangle" class="fa-solid fa-caret-up"></i>
                             <a href="">My Account <i class="fa-solid fa-angle-down"></i></a>
                             <div class="myAccountList">
-                                <a href="">Login</a>
+                                <a asp-controller="account" asp-action="login">Login</a>
                                 <a href="">Wishlist</a>
-                                <a href="">My Cart</a>
-                                <a href="">My Account</a>
-                                <a href="">Checkout</a>
                             </div>
                         </li>
                         <li class="Usd">
@@ -176,7 +173,6 @@
                                 <i id="triangle" class="fa-solid fa-caret-up"></i>
                                 <div class="basket header-cart" id="headerCart">
                                     @await Html.PartialAsync("_BasketCartPartial", Model.BasketVMs)
-
                                 </div>
                             </div>
                             <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-3 col-sm-3 lastForPrice">

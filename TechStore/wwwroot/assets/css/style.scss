@@ -5567,3 +5567,24 @@ body{
         }
     }
 }
+
+#login{
+   form{
+    margin: 6rem 0;
+    background-color: white;
+    padding: 4rem 2rem;
+    border-radius: 15px;
+    input{
+        border-radius: 20px;
+    }
+    button{
+        border-radius: 30px;
+        margin-top: 20px;
+        padding: 1rem 2rem;
+    }
+    h1{
+        margin-bottom: 6rem;
+    }
+   }
+    background-color: rgb(250, 248, 248);
+}

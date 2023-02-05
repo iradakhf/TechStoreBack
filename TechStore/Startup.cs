@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,6 +9,7 @@ using Newtonsoft.Json;
 using System;
 using TechStore.DAL;
 using TechStore.Interfaces;
+using TechStore.Models;
 using TechStore.Services;
 
 namespace TechStore
@@ -30,6 +32,21 @@ namespace TechStore
                 options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddScoped<ILayoutService, LayoutService>();
+            services.AddIdentity<AppUser, IdentityRole>(options =>
+             {
+                 options.User.RequireUniqueEmail = true;
+
+                 options.Password.RequireDigit = true;
+                 options.Password.RequiredLength = 8;
+                 options.Password.RequireLowercase = true;
+                 options.Password.RequireNonAlphanumeric = true;
+                 options.Password.RequireUppercase = true;
+
+                 options.Lockout.AllowedForNewUsers = true;
+                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+                 options.Lockout.MaxFailedAccessAttempts = 3;
+             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+
             services.AddSession(option => {
                 option.IdleTimeout = TimeSpan.FromSeconds(10);
             });
@@ -47,6 +64,8 @@ namespace TechStore
             app.UseRouting();
             app.UseSession();
             app.UseStaticFiles();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

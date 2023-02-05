@@ -1,9 +1,9 @@
-﻿@inject ILayoutService  layoutservices
+﻿@inject ILayoutService layoutservices
 
 @{
     Dictionary<string, string> settings = await layoutservices.GetSettingsAsync();
     IEnumerable<Category> categories = await layoutservices.GetCategoriesAsync();
-    IEnumerable<BasketVM> basketVMs = await layoutservices.GetBasketVMsAsync();
+    List<BasketVM> basketVMs = ViewBag.Basket;
     IEnumerable<Product> products = await layoutservices.GetProductAsync();
     HeaderVM headerVM = new HeaderVM
     {
@@ -42,6 +42,7 @@
     <script src="~/assets/js/category.js"></script>
     <script src="~/assets/js/cart.js"></script>
     <script src="~/assets/js/bootstrap.js"></script>
+    @RenderSection("Script", required:false)
 
 </body>
 </html>

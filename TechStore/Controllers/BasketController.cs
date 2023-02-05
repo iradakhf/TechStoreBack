@@ -18,113 +18,95 @@ namespace TechStore.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
-        {
-            return View();
-        }
+
         public async Task<IActionResult> AddToBasket(int? id)
         {
             if (id == null)
             {
-                return BadRequest("id null ola bilmez");
+                return BadRequest();
             }
-            Product product = await _context.Products.FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
 
-            if (!await _context.Products.AnyAsync(p => p.IsDeleted == false && p.Id == id))
+            Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
+
+            if (product == null)
             {
-                return NotFound("Id Yanlisdir");
+                return NotFound();
             }
 
             string basket = HttpContext.Request.Cookies["basket"];
-            List<BasketVM> products = null;
-            if (!string.IsNullOrWhiteSpace(basket))
-            {
-                products = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-                BasketVM basketVM = products.Find(p => p.Id == id);
-                if (basketVM != null)
-                {
-                    basketVM.Count += 1;
-                }
-                else
-                {
-                    basketVM = new BasketVM
-                    {
-                        Id = (int)id,
-                        Count = 1
-                    };
-                    products.Add(basketVM);
-                }
-            }
-            else
-            {
-                products = new List<BasketVM>();
-                BasketVM basketVM = new BasketVM
-                {
-                    Id = (int)id,
-                    Count = 1
-                };
-                products.Add(basketVM);
-
-
-            }
-            basket = JsonConvert.SerializeObject(products);
-            HttpContext.Response.Cookies.Append("basket", basket);
-            foreach (BasketVM item in products)
-            {
-                product = await _context.Products.FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == item.Id);
-                item.Title = product.Name;
-                item.Image = product.MainImage;
-                item.Price = product.Price > 0 ? product.Price : product.DiscountedPrice;
-          
-            }
-            return PartialView("_BasketCartPartial", products);
-        }
-       public async Task<IActionResult> DeleteFromBasket(int? id)
-        {
-
-            if (id == null) return BadRequest();
-
-            if (!await _context.Products.AnyAsync(p => p.Id == id)) return NotFound();
 
             List<BasketVM> basketVMs = null;
 
-            string coockie = HttpContext.Request.Cookies["basket"];
-
-            if (coockie != null)
+            if (basket != null)
             {
-                basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(coockie);
-
-                if (!basketVMs.Any(b => b.Id == id)) return NotFound();
-
-                BasketVM basketVM = basketVMs.FirstOrDefault(b => b.Id == id);
-
-                basketVMs.Remove(basketVM);
+                basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
             }
             else
             {
                 basketVMs = new List<BasketVM>();
             }
 
-            coockie = JsonConvert.SerializeObject(basketVMs);
-
-            HttpContext.Response.Cookies.Append("basket", coockie);
-
-            foreach (BasketVM basketVM in basketVMs)
+            if (basketVMs.Exists(b => b.ProductId == id))
             {
-                basketVM.Title = _context.Products.FirstOrDefault(p => p.Id == basketVM.Id).Name;
-                basketVM.Image = _context.Products.FirstOrDefault(p => p.Id == basketVM.Id).MainImage;
-                basketVM.Price = _context.Products.FirstOrDefault(p => p.Id == basketVM.Id).Price;
+                basketVMs.Find(b => b.ProductId == id).Count++;
+            }
+            else
+            {
+                BasketVM basketVM = new BasketVM
+                {
+                    ProductId = product.Id,
+                    Count = 1,
+                    Image = product.MainImage,
+                    Title = product.Name,
+                    Price = product.DiscountedPrice > 0 ? product.DiscountedPrice : product.Price
+                };
+
+                basketVMs.Add(basketVM);
             }
 
 
+            basket = JsonConvert.SerializeObject(basketVMs);
+
+            HttpContext.Response.Cookies.Append("basket", basket);
+
             return PartialView("_BasketCartPartial", basketVMs);
         }
-        public async Task<IActionResult> GetBasketContent()
+        public async Task<IActionResult> DeleteFromBasket(int? id)
         {
-            string pro = HttpContext.Request.Cookies["basket"];
-            List<BasketVM> products = JsonConvert.DeserializeObject<List<BasketVM>>(pro);
-            return Json(products);
+            if (id == null) return BadRequest();
 
+            if (!await _context.Products.AnyAsync(p => p.Id == id)) return NotFound();
+
+            string basket = HttpContext.Request.Cookies["basket"];
+
+            if (string.IsNullOrWhiteSpace(basket)) return BadRequest();
+
+            List<BasketVM> basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+
+            BasketVM basketVM = basketVMs.Find(b => b.ProductId == id);
+
+            if (basketVM == null) return NotFound();
+
+            basketVMs.Remove(basketVM);
+
+            basket = JsonConvert.SerializeObject(basketVMs);
+            HttpContext.Response.Cookies.Append("basket", basket);
+
+            return PartialView("_BasketCartPartial", await _getBasketItemAsync(basketVMs));
         }
+        private async Task<List<BasketVM>> _getBasketItemAsync(List<BasketVM> basketVMs)
+        {
+            foreach (BasketVM item in basketVMs)
+            {
+                Product dbProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == item.ProductId);
+
+                item.Title = dbProduct.Name;
+                item.Price = dbProduct.Price > 0 ? dbProduct.Price : dbProduct.DiscountedPrice;
+                item.Image = dbProduct.MainImage;
+            }
+
+            return basketVMs;
+        }
+        
     }
 }
