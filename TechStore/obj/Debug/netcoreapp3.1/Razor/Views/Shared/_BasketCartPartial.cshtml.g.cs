@@ -68,8 +68,29 @@ using TechStore.ViewModels.Account;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\_ViewImports.cshtml"
+using TechStore.ViewModels.AboutV;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\_ViewImports.cshtml"
+using TechStore.ViewModels.ContactV;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\_ViewImports.cshtml"
+using TechStore.ViewModels.SingleV;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"aafaa92a63dfaa8958bd214e7cb75751b4abf374", @"/Views/Shared/_BasketCartPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8976ae6d853d397329383911d1e79b9a451b54a4", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"70fb7e08c8d88d9bdc72b27a8b230e7abd41c3dd", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__BasketCartPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<BasketVM>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("alt", new global::Microsoft.AspNetCore.Html.HtmlString("product"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -111,7 +132,7 @@ using TechStore.ViewModels.Account;
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"row align-items-center mb-3\">\r\n        <div class=\"col-lg-4 col-xxl-4 col-xl-4 col-sm-4 col-md-4 col-4 imgForBasket\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "aafaa92a63dfaa8958bd214e7cb75751b4abf3746169", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "aafaa92a63dfaa8958bd214e7cb75751b4abf3746742", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -162,7 +183,7 @@ AddHtmlAttributeValue("", 252, item.Image, 252, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n            </div>\r\n        </div>\r\n        <div class=\"col-lg-2 col-xxl-2 col-xl-2 col-sm-2 col-md-2 col-2 closeX\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aafaa92a63dfaa8958bd214e7cb75751b4abf3748981", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aafaa92a63dfaa8958bd214e7cb75751b4abf3749554", async() => {
                 WriteLiteral("X");
             }
             );

@@ -79,48 +79,5 @@
             </div>
         </div>
     </div>
-    <section id="servicesCart">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-lg-2-5 col-xl-2-5 col-xxl-2-5 col-md-5 col-sm-5 col-12 boox">
-                    <div class="img">
-                        <img src="~/assets/images/car.png" alt="">
-                    </div>
-                    <div class="text">
-                        <h3>Worldwide Shipping</h3>
-                        <p>Free Shipping On Order Over $100</p>
-                    </div>
-                </div>
-                <div class="col-lg-2-5 col-xl-2-5 col-xxl-2-5 col-md-5 col-sm-5 col-12 boox">
-                    <div class="img">
-                        <img src="~/assets/images/order.png" alt="">
-                    </div>
-                    <div class="text">
-                        <h3>Order Online Service</h3>
-                        <p>Free Shipping On Order Over $100</p>
-                    </div>
-                </div>
-                <div class="col-lg-2-5 col-xl-2-5 col-xxl-2-5 col-md-5 col-sm-5 col-12 boox">
-                    <div class="img">
-                        <img src="~/assets/images/payment.png" alt="">
-
-                    </div>
-                    <div class="text">
-                        <h3>Payment</h3>
-                        <p>Free Shipping On Order Over $100</p>
-                    </div>
-                </div>
-                <div class="col-lg-2-5 col-xl-2-5 col-xxl-2-5 col-md-5 col-sm-5 col-12 boox">
-                    <div class="img">
-                        <img src="~/assets/images/return.png" alt="">
-
-                    </div>
-                    <div class="text">
-                        <h3>Return 30 Days</h3>
-                        <p>Free Shipping On Order Over $100</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   @await Component.InvokeAsync("Services")
 </main>

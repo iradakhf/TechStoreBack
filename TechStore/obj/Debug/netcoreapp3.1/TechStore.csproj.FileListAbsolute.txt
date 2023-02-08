@@ -389,7 +389,6 @@ C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Are
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Index.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Banner\Default.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\BestSellerOnSide\Default.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\BestSellerSingle\Default.cshtml.g.cs
@@ -433,3 +432,14 @@ C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\Login.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Basket\Index.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketPartial.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Services\Default.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Blog\Default.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\LatestProduct\Default.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Default.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Tag\Default.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Brand\Index.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Category\Index.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\TopCategory\Default.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CategorySlider\Default.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Detail.cshtml.g.cs

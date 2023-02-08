@@ -39,6 +39,8 @@ namespace TechStore.Models
         public Category Category { get; set; }
         public Nullable<int> BrandId { get; set; }
         public Brand Brand { get; set; }
+        public Nullable<int> TagId { get; set; }
+        public Tag Tag { get; set; }
         [NotMapped]
         public List<int> ColorIds { get; set; } = new List<int>();
         public List<ProductColor> ProductColors { get; set; }

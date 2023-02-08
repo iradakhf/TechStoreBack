@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TechStore.DAL;
 using TechStore.Models;
+using TechStore.ViewModels.SingleV;
 
 namespace TechStore.Controllers
 {
@@ -27,6 +28,26 @@ namespace TechStore.Controllers
             ViewBag.PageCount = Math.Ceiling((double)products.Count() / 5);
 
             return View(products.Skip((page - 1) * 5).Take(20));
+        }
+        public async Task<IActionResult> Detail(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+            SingleVM singleVM = new SingleVM
+            {
+                RecentProduct = await _context.Products.Include(p => p.Category).Where(p => p.IsDeleted == false && p.IsNewArrival).ToListAsync(),
+                Product = await _context.Products.Include(p => p.ProductImages).Where(p => p.IsDeleted == false).ToListAsync(),
+                ProductImages = await _context.ProductImages.Where(p => p.IsDeleted == false && p.ProductId == id).ToListAsync(),
+                ProductSingle = await _context.Products.Include(p=>p.Category).FirstOrDefaultAsync(p=>p.IsDeleted==false && p.Id == id)
+            };
+
+            if (singleVM == null)
+            {
+                return NotFound();
+            }
+            return View(singleVM);
         }
     }
 }

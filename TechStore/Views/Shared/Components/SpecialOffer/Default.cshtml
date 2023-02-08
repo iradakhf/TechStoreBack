@@ -24,24 +24,6 @@
                 <p class="ph">
                     @item.Description
                 </p>
-                <div class="countDown d-flex flex-wrap">
-                    <div class="DAYS">
-                        <div class="DAY"></div>
-                        <span>DAYS</span>
-                    </div>
-                    <div class="DAYS">
-                        <div class="Hour"></div>
-                        <span>HOURS</span>
-                    </div>
-                    <div class="DAYS">
-                        <div class="Min"></div>
-                        <span>MINS</span>
-                    </div>
-                    <div class="DAYS">
-                        <div class="Sec"></div>
-                        <span>SECS</span>
-                    </div>
-                </div>
             </div>
             <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-12 col-sm-12 ps-0 RIGHT">
                 <div class="rightGeneral">
@@ -54,7 +36,7 @@
                         </div>
                         <div class="col-lg-6 col-xl-6 col-xxl-6 col-6 col-sm-6 col-md-6">
                             <div class="productName">
-                                <a asp-controller="product" asp-action="index">@item.Product.Name</a>
+                                <a asp-controller="product" asp-action="detail" asp-route-id="@item.Id">@item.Product.Name</a>
                             </div>
                             <div class="productInfo">
                                 @item.Product.infoText

@@ -27,8 +27,18 @@ namespace TechStore.DAL
         public DbSet<ProductColor> ProductColors { get; set; }
         public DbSet<ShopBanner> ShopBanners { get; set; }
         public DbSet<Basket> Baskets { get; set; }
-
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        public DbSet<Partner> Partners { get; set; }
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<LeaveUsReply> LeaveUsReplies { get; set; }
+        public DbSet<CategorySlider> CategorySliders { get; set; }
+
 
     }
 }

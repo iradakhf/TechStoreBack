@@ -1,7 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
-
+@{
+    int count = (ViewBag.PageIndex - 1) * 5;
+}
 <!--bread crumb -->
 <div class="breadcrumbGeneral">
     <div class="container">
@@ -19,139 +21,69 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-xxl-9 col-xl-9 col-md-8 col-sm-12 col-12">
-                    <div class="blog">
-                        <img src="assets/images/blog/post-01.jpg" alt="">
-                        <h3><a href="">There are many variations of passages</a></h3>
-                        <ul class="d-flex">
-                            <li class="comment">
-                                <a href="">2 Comments</a>
-                            </li>
-                            <li class="date">
-                                <a href="">February 20, 2017</a>
-                            </li>
+                    @await Component.InvokeAsync("Blog")
+                    <nav aria-label="Page navigation example" style="margin-bottom:3rem">
+                        <ul class="pagination">
+                            @if (ViewBag.PageIndex > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" asp-action="index" asp-route-page="1" aria-label="Previous" style="color:grey">
+                                        @("<<")
+
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" asp-action="index" asp-route-page="@(ViewBag.PageIndex-1)" aria-label="Previous" style="color:grey">
+                                        <i class="fa-solid fa-arrow-left-long" style="color:grey"></i> Prev Page
+
+                                    </a>
+                                </li>
+                                @if (ViewBag.PageIndex == ViewBag.PageCount && ViewBag.PageIndex > 2)
+                                {
+                                    <li style="color:grey" class="page-item"><a style="color:grey" class="page-link" asp-action="index" asp-route-page="@(ViewBag.PageIndex-2)">@(ViewBag.PageIndex-2)</a></li>
+                                }
+                                <li style="color:grey" class="page-item"><a style="color:grey" class="page-link" asp-action="index" asp-route-page="@(ViewBag.PageIndex-1)">@(ViewBag.PageIndex-1)</a></li>
+                            }
+
+                            <li style="color:grey" class="page-item active"><a style="color:grey" class="page-link" asp-action="index" asp-route-page="@ViewBag.PageIndex">@ViewBag.PageIndex</a></li>
+
+                            @if (ViewBag.PageIndex < ViewBag.PageCount)
+                            {
+                                <li style="color:grey" class="page-item"><a style="color:grey" class="page-link" asp-action="index" asp-route-page="@(ViewBag.PageIndex + 1)">@(ViewBag.PageIndex + 1)</a></li>
+                                @if (ViewBag.PageIndex == 1 && (ViewBag.PageIndex + 2) < ViewBag.PageCount)
+                                {
+                                    <li style="color:grey" class="page-item"><a style="color:grey" class="page-link" asp-action="index" asp-route-page="@(ViewBag.PageIndex+2)">@(ViewBag.PageIndex+2)</a></li>
+                                }
+                                <li style="color:grey" class="page-item">
+                                    <a style="color:grey" class="page-link" asp-route-page="@(ViewBag.PageIndex + 1)" aria-label="Next">
+                                        Next Page <i class="fa-solid fa-arrow-right-long"></i>
+
+                                    </a>
+                                </li>
+                                <li style="color:grey" class="page-item">
+                                    <a style="color:grey" class="page-link" asp-action="index" asp-route-page="@ViewBag.PageCount" aria-label="Next">
+                                        @(">>")
+
+                                    </a>
+                                </li>
+                            }
                         </ul>
-                        <p>This is a Rebel that surrendered to us. Although he denies it, I believe there may be more of them, and I request permission to conduct a further search of the area. He was armed only with this. Good work, Commander. Leave us. Conduct your search and bring his companions to me. Yes, my Lord.</p>
-                        <button>Read More <i class="fa-solid fa-arrow-right-long"></i></button>
-                    </div>
-                    <div class="blog">
-                        <img src="assets/images/blog/post-01.jpg" alt="">
-                        <h3><a href="">There are many variations of passages</a></h3>
-                        <ul class="d-flex">
-                            <li class="comment">
-                                <a href="">2 Comments</a>
-                            </li>
-                            <li class="date">
-                                <a href="">February 20, 2017</a>
-                            </li>
-                        </ul>
-                        <p>This is a Rebel that surrendered to us. Although he denies it, I believe there may be more of them, and I request permission to conduct a further search of the area. He was armed only with this. Good work, Commander. Leave us. Conduct your search and bring his companions to me. Yes, my Lord.</p>
-                        <button>Read More <i class="fa-solid fa-arrow-right-long"></i></button>
-                    </div>
-                    <div class="blog">
-                        <img src="assets/images/blog/post-01.jpg" alt="">
-                        <h3><a href="">There are many variations of passages</a></h3>
-                        <ul class="d-flex">
-                            <li class="comment">
-                                <a href="">2 Comments</a>
-                            </li>
-                            <li class="date">
-                                <a href="">February 20, 2017</a>
-                            </li>
-                        </ul>
-                        <p>This is a Rebel that surrendered to us. Although he denies it, I believe there may be more of them, and I request permission to conduct a further search of the area. He was armed only with this. Good work, Commander. Leave us. Conduct your search and bring his companions to me. Yes, my Lord.</p>
-                        <button>Read More <i class="fa-solid fa-arrow-right-long"></i></button>
-                    </div>
-                    <section id="PrevNext">
-                        <div class="blog-pagination d-flex justify-content-between">
-                            <ul class="d-flex">
-                                <li><i class="fa-solid fa-arrow-left-long"></i> Prev Page</li>
-                                <li><a href="">01</a></li>
-                                <li><a href="">02</a></li>
-                                <li><a href="">03</a></li>
-                                <li><a href="">04</a></li>
-                                <li>Next Page <i class="fa-solid fa-arrow-right-long"></i></li>
-                            </ul>
-                        </div>
-                    </section>
+                    </nav>
                 </div>
                 <div class="col-lg-3 col-xl-3 col-xxl-3 col-md-4 col-sm-12 col-12 right">
                     <input type="text" placeholder="search">
                     <div class="categoryTab">
                         <div class="category"><a href="">Categories</a></div>
                     </div>
-                    <ul class="categoryList">
-                        <li><i class="fa-solid fa-chevron-right"></i>Accessories <span>(50)</span></li>
-                        <li><i class="fa-solid fa-chevron-right"></i>Cameras <span>(50)</span></li>
-                        <li><i class="fa-solid fa-chevron-right"></i>Computers <span>(50)</span></li>
-                        <li><i class="fa-solid fa-chevron-right"></i>Laptops <span>(50)</span></li>
-                        <li><i class="fa-solid fa-chevron-right"></i>Networking <span>(50)</span></li>
-                        <li><i class="fa-solid fa-chevron-right"></i>Old Products <span>(50)</span></li>
-                        <li><i class="fa-solid fa-chevron-right"></i>Smartphones <span>(50)</span></li>
+                    <ul>
+                        @await Component.InvokeAsync("Category")
                     </ul>
                     <section id="highlights">
                         <div class="container">
                             <div class="heading">
                                 <h3>Latest Products</h3>
                             </div>
-                            <div class="box">
-                                <div class="row">
-                                    <div class="col-lg-4 col-xl-4 col-xxl-4 col-md-4 col-sm-4 col-4">
-                                        <img src="assets/images/product/10.jpg" alt="">
-                                    </div>
-                                    <div class="col-lg-8 col-xl-8 col-xxl-8 col-md-8 col-sm-8 col-8">
-                                        <a href="">Razer RZ02-01071500-R3M1</a>
-                                        <div class="starts">
-                                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <div class="discount">
-                                            <span>$50.00</span>
-                                        </div>
-                                        <div class="sale">
-                                            <span>$2,999.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="row">
-                                    <div class="col-lg-4 col-xl-4 col-xxl-4 col-md-4 col-sm-4 col-4">
-                                        <img src="assets/images/product/10.jpg" alt="">
-                                    </div>
-                                    <div class="col-lg-8 col-xl-8 col-xxl-8 col-md-8 col-sm-8 col-8">
-                                        <a href="">Razer RZ02-01071500-R3M1</a>
-                                        <div class="starts">
-                                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <div class="discount">
-                                            <span>$50.00</span>
-                                        </div>
-                                        <div class="sale">
-                                            <span>$2,999.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="row">
-                                    <div class="col-lg-4 col-xl-4 col-xxl-4 col-md-4 col-sm-4 col-4">
-                                        <img src="assets/images/product/10.jpg" alt="">
-                                    </div>
-                                    <div class="col-lg-8 col-xl-8 col-xxl-8 col-md-8 col-sm-8 col-8">
-                                        <a href="">Razer RZ02-01071500-R3M1</a>
-                                        <div class="starts">
-                                            <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <div class="discount">
-                                            <span>$50.00</span>
-                                        </div>
-                                        <div class="sale">
-                                            <span>$2,999.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
+                         @await Component.InvokeAsync("LatestProduct") 
                         </div>
                     </section>
                     <div class="categoryTab">
@@ -159,11 +91,7 @@
                     </div>
                     <div class="tags">
                         <ul class="d-flex">
-                            <li><a href="">Phone</a></li>
-                            <li><a href="">Computer</a></li>
-                            <li><a href="">Phone</a></li>
-                            <li><a href="">Phone</a></li>
-                            <li><a href="">Phone</a></li>
+                          @await Component.InvokeAsync("Tag")
                         </ul>
                     </div>
                 </div>

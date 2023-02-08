@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="productDescription">
-                    <a href="shop.html">@product.Name</a>
+                    <a asp-controller="shop" asp-action="detail" asp-route-id="@product.Id">@product.Name</a>
                 </div>
                 <div class="priceSection d-flex">
                     <div class="discount">

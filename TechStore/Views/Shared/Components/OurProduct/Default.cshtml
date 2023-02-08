@@ -21,7 +21,7 @@
                                 <h2>@item.Category.Name</h2>
                             </div>
                             <div class="productDescription">
-                                <a href="">@item.Name</a>
+                                <a asp-controller="shop" asp-action="detail" asp-route-id="@item.Id">@item.Name</a>
                             </div>
                             <div class="price">
                                 <div class="discount">

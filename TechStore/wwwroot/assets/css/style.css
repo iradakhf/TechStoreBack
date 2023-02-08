@@ -4508,35 +4508,35 @@ body footer .bottom p {
 #aboutMain .slick-dots li button:hover {
   border: 1px solid rgb(242, 139, 0) !important;
 }
-#aboutMain .mainSliderSection {
+#aboutMain .mainSliderSectionAbout {
   margin-bottom: 50px;
 }
-#aboutMain .mainSliderSection .generalForSlider {
+#aboutMain .mainSliderSectionAbout .generalForSlider {
   border-radius: 7px;
   background-color: white;
   margin: 0rem 0.5rem;
   margin-bottom: 30px;
 }
-#aboutMain .mainSliderSection .generalForSlider .text {
+#aboutMain .mainSliderSectionAbout .generalForSlider .text {
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   color: rgb(72, 72, 72);
   margin-top: 10px;
 }
-#aboutMain .mainSliderSection .generalForSlider .text .text {
+#aboutMain .mainSliderSectionAbout .generalForSlider .text .text {
   color: rgb(145, 145, 145);
   font-size: 13px;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
 }
-#aboutMain .mainSliderSection .generalForSlider .image img {
+#aboutMain .mainSliderSectionAbout .generalForSlider .image img {
   width: 100%;
   border: 2px solid rgb(229, 229, 229);
   border-radius: 10px;
   transition-duration: 0.3s;
 }
-#aboutMain .mainSliderSection .generalForSlider .image img:hover {
+#aboutMain .mainSliderSectionAbout .generalForSlider .image img:hover {
   border-color: rgb(242, 139, 0);
 }
 #aboutMain #Testimonial .testimonialGenera {

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model AboutVM
+@{
     ViewData["Title"] = "Index";
 }
 
@@ -16,265 +17,109 @@
 <main id="aboutMain">
 
     <div class="container">
+
         <div id="firstSection">
+
             <div class="row">
                 <div class="col-lg-6 col-xl-6 col-xxl-6 col-12 col-md-12 col-sm-12 Left">
-                    <img src="assets/images/about/01.jpg" alt="">
+                    <img src="assets/images/about/@Model.About.Image" alt="">
                 </div>
                 <div class="col-lg-6 col-xl-6 col-xxl-6 col-12 col-md-12 col-sm-12 Right">
                     <div class="title">
-                        <h3>There are many variations of passages</h3>
+                        <h3>@Model.About.Title</h3>
                     </div>
                     <div class="content">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat. Duis velit lectus, posuere a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices interdum, leo metus luctus sem, vel vulputate diam ipsum sed lorem. Donec tempor arcu nisl, et molestie massa scelerisque ut. Nunc at rutrum leo. Mauris metus mauris, tristique quis sapien eu, rutrum vulputate enim.
+                            @Model.About.Description
                         </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, erat in malesuada aliquam, est erat faucibus purus, eget viverra nulla sem vitae neque. <span>Quisque id sodales libero. In nec enim nisi, in ultricies quam. Sed lacinia feugiat velit, cursus molestie lectus mollis et.</span>
-                        </p>
+
                     </div>
                 </div>
             </div>
-
         </div>
+
+
+
     </div>
     <div class="container">
         <section id="second">
             <div class="row secondGeneral">
-                <div class="col-lg-4 col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12 box">
-                    <img src="assets/images/about/02.jpg" alt="">
-                    <a href="">There are many</a>
-                    <p>
-                        This is a Rebel that surrendered to us. Although he denies it, I believe there may be more of them, and I request permission to conduct a further search of the area. He was
-                    </p>
-                </div>
-                <div class="col-lg-4 col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12 box">
-                    <img src="assets/images/about/03.jpg" alt="">
-                    <a href="">There are many</a>
-                    <p>
-                        This is a Rebel that surrendered to us. Although he denies it, I believe there may be more of them, and I request permission to conduct a further search of the area. He was
-                    </p>
-                </div>
-                <div class="col-lg-4 col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12 box">
-                    <img src="assets/images/about/04.jpg" alt="">
-                    <a href="">There are many</a>
-                    <p>
-                        This is a Rebel that surrendered to us. Although he denies it, I believe there may be more of them, and I request permission to conduct a further search of the area. He was
-                    </p>
-                </div>
+                @foreach (var item in Model.Posts)
+                {
+                    <div class="col-lg-4 col-xl-4 col-xxl-4 col-md-4 col-sm-12 col-12 box">
+                        <img src="assets/images/about/@item.Image" alt="">
+                        <a href=""> @item.Title</a>
+                        <p>
+                            @item.Description
+                        </p>
+                    </div>
+
+                }
             </div>
         </section>
         <section id="ourTeam">
             <h3>Meet Our Team</h3>
-            <div class="mainSliderSection row">
-                <div class="generalForSlider col-lg-3 col-xl-3 col-xxl-3 col-6 col-sm-12 col-md-12">
-                    <div class="image">
-                        <img src="assets/images/ourTeam/01 (1).jpg" alt="">
-                    </div>
-                    <div class="text">
-                        <div class="name">
-                            Garry Stil
+            <div class="mainSliderSectionAbout  row">
+
+                @foreach (var item in Model.Teams)
+                {
+                    <div class="generalForSlider col-lg-3 col-xl-3 col-xxl-3 col-6 col-sm-12 col-md-12">
+                        <div class="image">
+                            <img src="assets/images/ourTeam/@item.Image" alt="">
                         </div>
                         <div class="text">
-                            CEO/Founder
+                            <div class="name">
+                                @item.FullName
+                            </div>
+                            <div class="text">
+                                @item.Position
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="generalForSlider col-lg-3 col-xl-3 col-xxl-3 col-6 col-sm-12 col-md-12">
-                    <div class="image">
-                        <img src="assets/images/ourTeam/02.jpg" alt="">
-                    </div>
-                    <div class="text">
-                        <div class="name">
-                            Garry Stil
-                        </div>
-                        <div class="text">
-                            CEO/Founder
-                        </div>
-                    </div>
-                </div>
-                <div class="generalForSlider col-lg-3 col-xl-3 col-xxl-3 col-6 col-sm-12 col-md-12">
-                    <div class="image">
-                        <img src="assets/images/ourTeam/03.jpg" alt="">
-                    </div>
-                    <div class="text">
-                        <div class="name">
-                            Garry Stil
-                        </div>
-                        <div class="text">
-                            CEO/Founder
-                        </div>
-                    </div>
-                </div>
-                <div class="generalForSlider col-lg-3 col-xl-3 col-xxl-3 col-6 col-sm-12 col-md-12">
-                    <div class="image">
-                        <img src="assets/images/ourTeam/04.jpg" alt="">
-                    </div>
-                    <div class="text">
-                        <div class="name">
-                            Garry Stil
-                        </div>
-                        <div class="text">
-                            CEO/Founder
-                        </div>
-                    </div>
-                </div>
-                <div class="generalForSlider col-lg-3 col-xl-3 col-xxl-3 col-6 col-sm-12 col-md-12">
-                    <div class="image">
-                        <img src="assets/images/ourTeam/01 (1).jpg" alt="">
-                    </div>
-                    <div class="text">
-                        <div class="name">
-                            Garry Stil
-                        </div>
-                        <div class="text">
-                            CEO/Founder
-                        </div>
-                    </div>
-                </div>
-                <div class="generalForSlider col-lg-3 col-xl-3 col-xxl-3 col-6 col-sm-12 col-md-12">
-                    <div class="image">
-                        <img src="assets/images/ourTeam/01 (1).jpg" alt="">
-                    </div>
-                    <div class="text">
-                        <div class="name">
-                            Garry Stil
-                        </div>
-                        <div class="text">
-                            CEO/Founder
-                        </div>
-                    </div>
-                </div>
+
+                }
             </div>
-        </section>
-        <section id="Testimonial">
-            <div class="testimonialGenera">
-                <h3>Testimonial</h3>
-                <div class="testimonialGeneral1">
-                    <div class="testimonialGeneral">
-                        <div class="image">
-                            <img src="assets/images/testimonial/01.jpg" alt="">
+            </section>
+                <section id="Testimonial">
+                    <div class="testimonialGenera">
+                        <h3>Testimonial</h3>
+                        <div class="testimonialGeneral1">
+                            @foreach (var item in Model.Testimonials)
+                            {
+                            <div class="testimonialGeneral">
+                                <div class="image">
+                                    <img src="assets/images/testimonial/@item.Image" alt="">
 
-                        </div>
-                        <div class="name">
-                            Harry Dor
-                        </div>
-                        <div class="ph">
-                            <p>
-                                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-                            </p>
-                        </div>
+                                </div>
+                                <div class="name">
+                                    @item.Title
+                                </div>
+                                <div class="ph">
+                                    <p>
+                                       @item.Description
+                                    </p>
+                                </div>
 
-                    </div>
-                    <div class="testimonialGeneral">
-                        <div class="image">
-                            <img src="assets/images/testimonial/01.jpg" alt="">
+                            </div>
 
+                            }
                         </div>
-                        <div class="name">
-                            Harry Dor
-                        </div>
-                        <div class="ph">
-                            <p>
-                                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-                            </p>
-                        </div>
+                        <section id="ourTeam">
+                            <h3>Partners</h3>
+                            <div class="partners row">
+                                @foreach (var item in Model.Partners)
+                                {
+                                <div class="generalForSlider col-lg-2 col-xl-2 col-xxl-2 col-6 col-sm-12 col-md-12">
+                                    <div class="image">
+                                        <img src="assets/images/brand/@item.Image" alt="">
+                                    </div>
+                                </div>
 
-                    </div>
-                    <div class="testimonialGeneral">
-                        <div class="image">
-                            <img src="assets/images/testimonial/01.jpg" alt="">
-
-                        </div>
-                        <div class="name">
-                            Harry Dor
-                        </div>
-                        <div class="ph">
-                            <p>
-                                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-                            </p>
-                        </div>
-
-                    </div>
-                    <div class="testimonialGeneral">
-                        <div class="image">
-                            <img src="assets/images/testimonial/01.jpg" alt="">
-
-                        </div>
-                        <div class="name">
-                            Harry Dor
-                        </div>
-                        <div class="ph">
-                            <p>
-                                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-                <section id="ourTeam">
-                    <h3>Partners</h3>
-                    <div class="partners row">
-                        <div class="generalForSlider col-lg-2 col-xl-2 col-xxl-2 col-6 col-sm-12 col-md-12">
-                            <div class="image">
-                                <img src="assets/images/brand/brand2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="generalForSlider col-lg-2 col-xl-2 col-xxl-2 col-6 col-sm-12 col-md-12">
-                            <div class="image">
-                                <img src="assets/images/brand/brand6 (1).png" alt="">
-                            </div>
-                        </div>
-                        <div class="generalForSlider col-lg-2 col-xl-2 col-xxl-2 col-6 col-sm-12 col-md-12">
-                            <div class="image">
-                                <img src="assets/images/brand/brand7.png" alt="">
-                            </div>
-                        </div>
-                        <div class="generalForSlider col-lg-2 col-xl-2 col-xxl-2 col-6 col-sm-12 col-md-12">
-                            <div class="image">
-                                <img src="assets/images/brand/brand6.png" alt="">
-                            </div>
-                        </div>
-                        <div class="generalForSlider col-lg-2 col-xl-2 col-xxl-2 col-6 col-sm-12 col-md-12">
-                            <div class="image">
-                                <img src="assets/images/brand/brand4.png" alt="">
-                            </div>
-                        </div>
-                        <div class="generalForSlider col-lg-2 col-xl-2 col-xxl-2 col-6 col-sm-12 col-md-12">
-                            <div class="image">
-                                <img src="assets/images/brand/brand3 (1).png" alt="">
-                            </div>
-                        </div>
-                        <div class="generalForSlider col-lg-2 col-xl-2 col-xxl-2 col-6 col-sm-12 col-md-12">
-                            <div class="image">
-                                <img src="assets/images/brand/brand3.png" alt="">
-                            </div>
-                        </div>
-                        <div class="generalForSlider col-lg-2 col-xl-2 col-xxl-2 col-6 col-sm-12 col-md-12">
-                            <div class="image">
-                                <img src="assets/images/brand/brand7.png" alt="">
-                            </div>
-                        </div>
-                        <div class="generalForSlider col-lg-2 col-xl-2 col-xxl-2 col-6 col-sm-12 col-md-12">
-                            <div class="image">
-                                <img src="assets/images/brand/brand6 (1).png" alt="">
-                            </div>
-                        </div>
-                        <div class="generalForSlider col-lg-2 col-xl-2 col-xxl-2 col-6 col-sm-12 col-md-12">
-                            <div class="image">
-                                <img src="assets/images/brand/brand4 (1).png" alt="">
-                            </div>
-                        </div>
-                        <div class="generalForSlider col-lg-2 col-xl-2 col-xxl-2 col-6 col-sm-12 col-md-12">
-                            <div class="image">
-                                <img src="assets/images/brand/brand3 (1).png" alt="">
-                            </div>
-                        </div>
-
-
+                                }
+                             </div>
+                        </section>
                     </div>
                 </section>
             </div>
-        </section>
-    </div>
 </main>
+

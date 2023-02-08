@@ -38,7 +38,7 @@ function on() {
          $(".searchSuggestions").css("top","78px");
       }
     })
-    $('.mainSliderSection').slick({
+    $('.mainSliderSectionAbout').slick({
         dots: true,
         infinite: false,
         autoplay:true,

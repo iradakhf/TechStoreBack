@@ -18,7 +18,7 @@ namespace TechStore.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            IEnumerable<Product> products = await _context.Products.Include(p=>p.Category).Where(s => s.IsDeleted == false).ToListAsync();
+            IEnumerable<Product> products = await _context.Products.Include(p=>p.Category).Where(s => s.IsDeleted == false && s.IsBestSeller).ToListAsync();
             if (products == null && products.Count() < 0)
             {
                 return View("Not Found");

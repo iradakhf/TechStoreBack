@@ -68,8 +68,29 @@ using TechStore.ViewModels.Account;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\_ViewImports.cshtml"
+using TechStore.ViewModels.AboutV;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\_ViewImports.cshtml"
+using TechStore.ViewModels.ContactV;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\_ViewImports.cshtml"
+using TechStore.ViewModels.SingleV;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"75f4483c87f319f532fdb493ff73c2f483d8031f", @"/Views/Shop/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8976ae6d853d397329383911d1e79b9a451b54a4", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"70fb7e08c8d88d9bdc72b27a8b230e7abd41c3dd", @"/Views/_ViewImports.cshtml")]
     public class Views_Shop_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Product>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("page-link"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -185,7 +206,7 @@ using TechStore.ViewModels.Account;
 #line hidden
 #nullable disable
             WriteLiteral("                                <li class=\"page-item\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f9671", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f10244", async() => {
                 WriteLiteral("\r\n                                        ");
 #nullable restore
 #line 55 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\Shop\Index.cshtml"
@@ -218,7 +239,7 @@ using TechStore.ViewModels.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                </li>\r\n                                <li class=\"page-item\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f12045", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f12619", async() => {
                 WriteLiteral("\r\n                                        <i class=\"fa-solid fa-arrow-left-long\" style=\"color:grey\"></i> Prev Page\r\n\r\n                                    ");
             }
             );
@@ -261,7 +282,7 @@ using TechStore.ViewModels.Account;
 #line hidden
 #nullable disable
             WriteLiteral("                                    <li style=\"color:grey\" class=\"page-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f15098", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f15672", async() => {
 #nullable restore
 #line 67 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\Shop\Index.cshtml"
                                                                                                                                                                             Write(ViewBag.PageIndex-2);
@@ -308,7 +329,7 @@ using TechStore.ViewModels.Account;
 #line hidden
 #nullable disable
             WriteLiteral("                                <li style=\"color:grey\" class=\"page-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f18139", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f18713", async() => {
 #nullable restore
 #line 69 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\Shop\Index.cshtml"
                                                                                                                                                                         Write(ViewBag.PageIndex-1);
@@ -355,7 +376,7 @@ using TechStore.ViewModels.Account;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                            <li style=\"color:grey\" class=\"page-item active\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f21175", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f21749", async() => {
 #nullable restore
 #line 72 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\Shop\Index.cshtml"
                                                                                                                                                                       Write(ViewBag.PageIndex);
@@ -403,7 +424,7 @@ using TechStore.ViewModels.Account;
 #line hidden
 #nullable disable
             WriteLiteral("                                <li style=\"color:grey\" class=\"page-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f24277", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f24851", async() => {
 #nullable restore
 #line 76 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\Shop\Index.cshtml"
                                                                                                                                                                           Write(ViewBag.PageIndex + 1);
@@ -451,7 +472,7 @@ using TechStore.ViewModels.Account;
 #line hidden
 #nullable disable
             WriteLiteral("                                    <li style=\"color:grey\" class=\"page-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f27429", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f28003", async() => {
 #nullable restore
 #line 79 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\Shop\Index.cshtml"
                                                                                                                                                                             Write(ViewBag.PageIndex+2);
@@ -498,7 +519,7 @@ using TechStore.ViewModels.Account;
 #line hidden
 #nullable disable
             WriteLiteral("                                <li style=\"color:grey\" class=\"page-item\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f30510", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f31084", async() => {
                 WriteLiteral("\r\n                                        Next Page <i class=\"fa-solid fa-arrow-right-long\"></i>\r\n\r\n                                    ");
             }
             );
@@ -530,7 +551,7 @@ using TechStore.ViewModels.Account;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                </li>\r\n                                <li style=\"color:grey\" class=\"page-item\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f33058", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75f4483c87f319f532fdb493ff73c2f483d8031f33632", async() => {
                 WriteLiteral("\r\n                                        ");
 #nullable restore
 #line 89 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\Shop\Index.cshtml"

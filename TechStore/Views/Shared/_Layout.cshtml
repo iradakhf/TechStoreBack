@@ -31,18 +31,19 @@
     @RenderBody()
     <!-- Footer Section -->
     @(await Component.InvokeAsync("Footer",settings) )
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="~/assets/js/app.js"></script>
-    <script src="~/assets/js/custom.js"></script>
-    <script src="~/assets/js/about.js"></script>
-    <script src="~/assets/js/shop.js"></script>
-    <script src="~/assets/js/brand.js"></script>
-    <script src="~/assets/js/singleProduct.js"></script>
-    <script src="~/assets/js/category.js"></script>
-    <script src="~/assets/js/cart.js"></script>
-    <script src="~/assets/js/bootstrap.js"></script>
-    @RenderSection("Script", required:false)
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="~/assets/js/app.js" defer></script>
+    <script src="~/assets/js/about.js" defer></script>
+    <script src="~/assets/js/custom.js" defer></script>
+    <script src="~/assets/js/shop.js" defer></script>
+    <script src="~/assets/js/brand.js" defer></script>
+    <script src="~/assets/js/singleProduct.js" defer></script>
+    <script src="~/assets/js/category.js" defer></script>
+    <script src="~/assets/js/cart.js" defer></script>
+    <script src="~/assets/js/bootstrap.js" defer></script>
+
+    @RenderSection("Script", required: false)
 
 </body>
 </html>

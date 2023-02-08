@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- main -->
+<main id="categoryMain">
+    <div class="breadcrumbGeneral">
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><span>Home</span> <i class="fa-solid fa-arrow-right-long"></i></a></li>
+                <li><a href="shop.html"><span>Shop</span> <i class="fa-solid fa-arrow-right-long"></i></a></li>
+                <li><a href="#"></a><span>Smartphones</span></li>
+            </ul>
+        </div>
+    </div>
+    <section id="mainSliderSection">
+        <div class="container">
+            <div class="mainSliderSection">
+                @await Component.InvokeAsync("CategorySlider")
+              
+               
+            </div>
+
+
+        </div>
+    </section>
+    <!-- our products-->
+    @await Component.InvokeAsync("TopCategory") 
+    @await Component.InvokeAsync("Highlight")
+</main>
