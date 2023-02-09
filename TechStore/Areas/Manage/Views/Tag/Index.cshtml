@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Team>
+﻿@model IEnumerable<Tag>
 
 @{
     ViewData["Title"] = "Index";
@@ -8,12 +8,12 @@
 
 <div class="row">
     <div class="col-lg-2 h3 mb-4 text-gray-800">
-        <h1>Team</h1>
+        <h1>Tag</h1>
     </div>
 
 
     <div class="col-lg-8 h3 mb-4 text-gray-800 text-end">
-        <a asp-controller="team" asp-action="Create" asp-area="Manage" class="btn btn-primary">Create</a>
+        <a asp-controller="tag" asp-action="Create" asp-area="Manage" class="btn btn-primary">Create</a>
     </div>
 </div>
 <div class="row">
@@ -23,9 +23,7 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">full Name</th>
-                    <th scope="col">position</th>
-                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
                     <th>
                         Created at
                     </th>
@@ -36,23 +34,21 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Team team in Model)
+                @foreach (Tag tag in Model)
                 {
                     count++;
                     <tr>
                         <th class="align-middle" scope="row">@count</th>
-                        <td class="align-middle">@team.FullName</td>
-                        <td class="align-middle">@team.Position</td>
-                        <td class="align-middle" style="width:10%"><img width="50%" src="~/assets/images/ourTeam/@team?.Image" alt="Alternate Text" style="width:90%" /></td>
-                        <td>
-                            @team.CreatedAt?.ToString("dd/mm/yyyy")
+                        <td class="align-middle">@tag.Name</td>
+                       <td>
+                            @tag.CreatedAt?.ToString("dd/mm/yyyy")
                         </td>
                         <td>
-                            @team.UpdatedAt?.ToString("dd/mm/yyyy")
+                            @tag.UpdatedAt?.ToString("dd/mm/yyyy")
                         </td>
                         <td class="d-flex p-5">
-                            <a class="btn btn-warning" style="margin-right:10px" asp-action="Update" asp-route-page="@ViewBag.PageIndex" asp-route-id="@team.Id">Update</a>
-                            <a class="btn  btn-danger" asp-route-page="@ViewBag.PageIndex" asp-action="delete" asp-route-id="@team.Id">Delete</a>
+                            <a class="btn btn-warning" style="margin-right:10px" asp-action="Update" asp-route-page="@ViewBag.PageIndex" asp-route-id="@tag.Id">Update</a>
+                            <a class="btn  btn-danger" asp-route-page="@ViewBag.PageIndex" asp-action="delete" asp-route-id="@tag.Id">Delete</a>
                         </td>
                     </tr>
                 }

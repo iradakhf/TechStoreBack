@@ -449,3 +449,16 @@ C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Are
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Partner\Index.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Partner\Create.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Partner\Update.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\About\Index.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\About\Update.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Post\Index.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Post\Update.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Testimonial\Index.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Testimonial\Update.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Blog\Update.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Blog\Index.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Tag\Index.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Tag\Create.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Tag\Update.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Blog\Create.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Contact\Index.cshtml.g.cs
