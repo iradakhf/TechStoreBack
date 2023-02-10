@@ -38,6 +38,10 @@ namespace TechStore.DAL
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<LeaveUsReply> LeaveUsReplies { get; set; }
         public DbSet<CategorySlider> CategorySliders { get; set; }
+        public DbSet<Description> Descriptions { get; set; }
+        public DbSet<TechnicalSpec> TechnicalSpecs { get; set; }
+
+
 
 
     }

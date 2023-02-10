@@ -157,9 +157,11 @@
     <section id="Description">
         <div class="container">
             <div class="row justify-content-between top">
+                @foreach (var item in Model.Descriptions.Take(1))
+                {
                 <div class="col-lg-6 col-xl-6 col-xxl-6 col-12 col-sm-12 col-md-12">
-                    <h4>Nuqqam Et Massa</h4>
-                    <p>Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet.</p>
+                    <h4>@item.Title</h4>
+                    <p>@item.DescriptionGeneral</p>
                     <h4>Wireless</h4>
                     <p>Sed sodales sed orci molestie tristique. Nunc dictum, erat id molestie vestibulum, ex leo vestibulum justo, luctus tempor erat sem quis diam. Lorem ipsum dolor sit amet.</p>
                     <h4>Fresh Design</h4>
@@ -172,6 +174,8 @@
                     </p>
 
                 </div>
+
+                }
                 <div class="col-lg-5 col-xl-5 col-xxl-5 col-12 col-sm-12 col-md-12 text-end">
                     <img src="~/assets/images/01.png" alt="">
                     <h4>Fresh Design</h4>
@@ -216,15 +220,20 @@
     <section id="TechnicalSpecs">
         <div class="container">
             <h4>
-                Warch 42 mm Smart Watches
+               @Model.ProductSingle.Name
             </h4>
-            <p>Height <span>38.6mm</span></p>
-            <p>Material <span>Stainless Stee</span></p>
-            <p>Case <span>40g</span></p>
-            <p>Color <span>blue, grey,green,light,blue,lime</span></p>
-            <p>Depth <span>10.6mm</span></p>
-            <p>Width <span>10.6mm</span></p>
-            <p class="lastP">Size <span>Large,Medium,Small</span></p>
+            <p>Height <span>@Model.ProductSingle.TechnicalSpec.Height</span></p>
+            <p>Material <span>@Model.ProductSingle.TechnicalSpec.Material</span></p>
+            <p>Case <span>@Model.ProductSingle.TechnicalSpec.Case</span></p>
+            <p>Color <span>
+               
+         @string.Join(", ", Model.ProductSingle.ProductColors.Select(x => x.Color.Name))
+
+                
+
+</span></p>
+            <p>Depth <span>@Model.ProductSingle.TechnicalSpec.Depth</span></p>
+            <p>Width <span>@Model.ProductSingle.TechnicalSpec.Width</span></p>
         </div>
 
     </section>

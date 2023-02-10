@@ -11,7 +11,11 @@ namespace TechStore.ViewModels.SingleV
        public IEnumerable<Product> RecentProduct { get; set; }
         public IEnumerable<Product> Product { get; set; }
         public IEnumerable<ProductImage> ProductImages { get; set; }
+
         public Product ProductSingle { get; set; }
+        public IEnumerable<Description> Descriptions { get; set; }
+
+
 
 
     }

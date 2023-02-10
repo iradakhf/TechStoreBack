@@ -38,9 +38,10 @@ namespace TechStore.Controllers
             SingleVM singleVM = new SingleVM
             {
                 RecentProduct = await _context.Products.Include(p => p.Category).Where(p => p.IsDeleted == false && p.IsNewArrival).ToListAsync(),
-                Product = await _context.Products.Include(p => p.ProductImages).Where(p => p.IsDeleted == false).ToListAsync(),
+                Product = await _context.Products.Include(p => p.ProductImages).Include(p=>p.ProductColors).ThenInclude(p=>p.Color).Where(p => p.IsDeleted == false).ToListAsync(),
                 ProductImages = await _context.ProductImages.Where(p => p.IsDeleted == false && p.ProductId == id).ToListAsync(),
-                ProductSingle = await _context.Products.Include(p=>p.Category).FirstOrDefaultAsync(p=>p.IsDeleted==false && p.Id == id)
+                ProductSingle = await _context.Products.Include(p => p.Category).Include(ps=>ps.TechnicalSpec).FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id),
+                Descriptions = await _context.Descriptions.Where(D => D.IsDeleted == false && D.ProductId == id).ToListAsync()
             };
 
             if (singleVM == null)

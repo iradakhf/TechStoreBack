@@ -41,10 +41,14 @@ namespace TechStore.Models
         public Brand Brand { get; set; }
         public Nullable<int> TagId { get; set; }
         public Tag Tag { get; set; }
+        public Nullable<int> TechnicalSpecId { get; set; }
+        public TechnicalSpec TechnicalSpec { get; set; }
         [NotMapped]
         public List<int> ColorIds { get; set; } = new List<int>();
         public List<ProductColor> ProductColors { get; set; }
         public List<ProductImage> ProductImages { get; set; }
+        public List<Description> Descriptions { get; set; }
+
         [NotMapped]
         public IFormFile[] ProductImagesFile { get; set; }
 

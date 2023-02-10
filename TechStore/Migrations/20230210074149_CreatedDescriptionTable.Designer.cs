@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechStore.DAL;
 
 namespace TechStore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230210074149_CreatedDescriptionTable")]
+    partial class CreatedDescriptionTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -780,9 +782,6 @@ namespace TechStore.Migrations
                     b.Property<int?>("TagId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TechnicalSpecId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -798,8 +797,6 @@ namespace TechStore.Migrations
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("TagId");
-
-                    b.HasIndex("TechnicalSpecId");
 
                     b.ToTable("Products");
                 });
@@ -1089,55 +1086,6 @@ namespace TechStore.Migrations
                     b.ToTable("Teams");
                 });
 
-            modelBuilder.Entity("TechStore.Models.TechnicalSpec", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Case")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(2550)")
-                        .HasMaxLength(2550);
-
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Depth")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(2550)")
-                        .HasMaxLength(2550);
-
-                    b.Property<string>("Height")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(2550)")
-                        .HasMaxLength(2550);
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Material")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(2550)")
-                        .HasMaxLength(2550);
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Width")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(2550)")
-                        .HasMaxLength(2550);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TechnicalSpecs");
-                });
-
             modelBuilder.Entity("TechStore.Models.Testimonial", b =>
                 {
                     b.Property<int>("Id")
@@ -1250,7 +1198,7 @@ namespace TechStore.Migrations
             modelBuilder.Entity("TechStore.Models.Description", b =>
                 {
                     b.HasOne("TechStore.Models.Product", "Product")
-                        .WithMany("Descriptions")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1271,10 +1219,6 @@ namespace TechStore.Migrations
                     b.HasOne("TechStore.Models.Tag", "Tag")
                         .WithMany("Products")
                         .HasForeignKey("TagId");
-
-                    b.HasOne("TechStore.Models.TechnicalSpec", "TechnicalSpec")
-                        .WithMany()
-                        .HasForeignKey("TechnicalSpecId");
                 });
 
             modelBuilder.Entity("TechStore.Models.ProductColor", b =>

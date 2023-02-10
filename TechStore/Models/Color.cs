@@ -11,5 +11,6 @@ namespace TechStore.Models
         [Required(ErrorMessage = "Color is Required"), StringLength(100)]
         public string Name { get; set; }
         public IEnumerable<ProductColor> ProductColors{ get; set; }
+
     }
 }
