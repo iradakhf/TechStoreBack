@@ -30,7 +30,12 @@
             </div>
             <div class="col-lg-6 col-xxl-6 col-xl-6 col-6 col-md-6 col-sm-6">
                 <div class="trash">
-                    <img src="~/assets/images/delete.png" alt="">
+                    <a class="deletefromcartbtn" asp-controller="basket" asp-action="DeleteFromCart" asp-route-id="@item.ProductId">
+                        <img src="~/assets/images/delete.png" alt="">
+                     
+                    </a>
+
+                    
                 </div>
 
             </div>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Term>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main id="termsMain">
+    <div class="breadcrumbGeneral">
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><span>Home</span> <i class="fa-solid fa-arrow-right-long"></i></a></li>
+                <li><a href="shop.html"><span>Shop</span> <i class="fa-solid fa-arrow-right-long"></i></a></li>
+                <li><a href="#"></a><span>Smartphones</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        @foreach (var item in Model)
+        {
+        <div class="box">
+            <h3>@item.Title</h3>
+            <p>@item.Description</p>
+        </div>
+
+        }
+      
+    </div>
+</main>

@@ -40,7 +40,8 @@ namespace TechStore.DAL
         public DbSet<CategorySlider> CategorySliders { get; set; }
         public DbSet<Description> Descriptions { get; set; }
         public DbSet<TechnicalSpec> TechnicalSpecs { get; set; }
-
+        public DbSet<FAQ> FAQs { get; set; }
+        public DbSet<Term> Terms { get; set; }
 
 
 

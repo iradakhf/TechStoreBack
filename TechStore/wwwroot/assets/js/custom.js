@@ -25,5 +25,18 @@
        
 
      })
+    $(document).on('click', '.deletefromcartbtn', function (e) {
+        e.preventDefault();
 
+        fetch($(this).attr('href'))
+            .then(res => res.text())
+            .then(data => {
+                $('.basketindexcontainer').html(data);
+                fetch('/basket/getbasket')
+                    .then(res => res.text())
+                    .then(data => {
+                        $('#headerCart').html(data);
+                    });
+            })
+    })
 })

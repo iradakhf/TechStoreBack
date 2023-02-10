@@ -465,3 +465,5 @@ C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Are
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Contact\Update.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\CategorySlider\Update.cshtml.g.cs
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\CategorySlider\Index.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\FAQ\Index.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\Razor\Views\Term\Index.cshtml.g.cs

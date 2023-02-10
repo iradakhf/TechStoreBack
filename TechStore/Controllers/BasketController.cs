@@ -39,6 +39,7 @@ namespace TechStore.Controllers
 
             return View(await _getBasketItemAsync(basketVMs));
         }
+
         public async Task<IActionResult> AddToBasket(int? id)
         {
             if (id == null)
@@ -121,9 +122,108 @@ namespace TechStore.Controllers
 
             HttpContext.Response.Cookies.Append("basket", basket);
 
-            return PartialView("_BasketPartial", await _getBasketItemAsync(basketVMs));
+            return PartialView("_BasketCartPartial", await _getBasketItemAsync(basketVMs));
         }
 
+        public async Task<IActionResult> GetBasket()
+        {
+            string basket = Request.Cookies["basket"];
+
+            List<BasketVM> basketVMs = null;
+
+            if (!string.IsNullOrWhiteSpace(basket))
+            {
+                basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+            }
+            else
+            {
+                basketVMs = new List<BasketVM>();
+            }
+
+            if (User.Identity.IsAuthenticated)
+            {
+                AppUser appUser = await _userManager.Users.Include(u => u.Baskets).FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
+
+                if (appUser.Baskets != null && appUser.Baskets.Count() > 0)
+                {
+                    foreach (var item in appUser.Baskets)
+                    {
+                        if (!basketVMs.Any(b => b.ProductId == item.ProductId))
+                        {
+                            BasketVM basketVM = new BasketVM
+                            {
+                                ProductId = item.ProductId,
+                                Count = item.Count
+                            };
+
+                            basketVMs.Add(basketVM);
+                        }
+                    }
+
+                    basket = JsonConvert.SerializeObject(basketVMs);
+
+                    Response.Cookies.Append("basket", basket);
+                }
+            }
+
+            return PartialView("_BasketCartPartial", await _getBasketItemAsync(basketVMs));
+        }
+
+        public async Task<IActionResult> DeleteFromBasket(int? id)
+        {
+            if (id == null) return BadRequest();
+
+            if (!await _context.Products.AnyAsync(p => p.Id == id)) return NotFound();
+
+            string basket = HttpContext.Request.Cookies["basket"];
+
+            if (string.IsNullOrWhiteSpace(basket)) return BadRequest();
+
+            List<BasketVM> basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+
+            BasketVM basketVM = basketVMs.Find(b => b.ProductId == id);
+
+            if (basketVM == null) return NotFound();
+
+            basketVMs.Remove(basketVM);
+
+            basket = JsonConvert.SerializeObject(basketVMs);
+            HttpContext.Response.Cookies.Append("basket", basket);
+
+            return PartialView("_BasketCartPartial", await _getBasketItemAsync(basketVMs));
+        }
+
+        public async Task<IActionResult> UpdateCount(int? id, int count)
+        {
+            if (id == null) return BadRequest();
+
+            if (!await _context.Products.AnyAsync(p => p.Id == id)) return NotFound();
+
+            string basket = HttpContext.Request.Cookies["basket"];
+
+            List<BasketVM> basketVMs = null;
+
+            if (!string.IsNullOrWhiteSpace(basket))
+            {
+                basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+
+                BasketVM basketVM = basketVMs.FirstOrDefault(b => b.ProductId == id);
+
+                if (basketVM == null) return NotFound();
+
+                basketVM.Count = count <= 0 ? 1 : count;
+
+                basket = JsonConvert.SerializeObject(basketVMs);
+
+                HttpContext.Response.Cookies.Append("basket", basket);
+            }
+            else
+            {
+                return BadRequest();
+            }
+
+            return PartialView("_BasketPartial", await _getBasketItemAsync(basketVMs));
+        }
         public async Task<IActionResult> DeleteFromCart(int? id)
         {
             if (id == null) return BadRequest();
@@ -145,7 +245,7 @@ namespace TechStore.Controllers
             basket = JsonConvert.SerializeObject(basketVMs);
             HttpContext.Response.Cookies.Append("basket", basket);
 
-            return PartialView("_BasketIndexPartial", await _getBasketItemAsync(basketVMs));
+            return PartialView("_BasketPartial", await _getBasketItemAsync(basketVMs));
         }
         private async Task<List<BasketVM>> _getBasketItemAsync(List<BasketVM> basketVMs)
         {
