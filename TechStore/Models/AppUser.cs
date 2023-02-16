@@ -19,5 +19,7 @@ namespace TechStore.Models
         public Nullable<DateTime> DeletedAt { get; set; }
         public Nullable<DateTime> UpdatedAt { get; set; }
         public List<Basket> Baskets { get; set; }
+        public List<Wishlist> Wishlists { get; set; }
+
     }
 }

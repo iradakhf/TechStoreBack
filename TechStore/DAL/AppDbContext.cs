@@ -43,6 +43,7 @@ namespace TechStore.DAL
         public DbSet<FAQ> FAQs { get; set; }
         public DbSet<Term> Terms { get; set; }
 
+        public DbSet<Wishlist> Wishlists { get; set; }
 
 
     }

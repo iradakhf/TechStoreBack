@@ -10,6 +10,7 @@ using TechStore.ViewModels.Basket;
 
 namespace TechStore.Controllers
 {
+
     public class HomeController : Controller
     {
         private readonly AppDbContext _context;

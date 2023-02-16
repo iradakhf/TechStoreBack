@@ -7,11 +7,7 @@
 <main id="cartMain">
     <div class="breadcrumbGeneral">
         <div class="container">
-            <ul>
-                <li><a href="index.html"><span>Home</span> <i class="fa-solid fa-arrow-right-long"></i></a></li>
-                <li><a href="shop.html"><span>Shop</span> <i class="fa-solid fa-arrow-right-long"></i></a></li>
-                <li><a href="#"></a><span>Smartphones</span></li>
-            </ul>
+           
         </div>
     </div>
     <div class="container">
@@ -32,10 +28,7 @@
                                 @await Html.PartialAsync("_BasketPartial", Model)
                             </tbody>
                         </table>
-                        <div class="coupon d-flex justify-content-center">
-                            <input type="text" placeholder="Coupon Code">
-                            <button>Apply Coupon</button>
-                        </div>
+                        
 
                     </div>
 
@@ -45,7 +38,7 @@
                         <h3>Cart Totals</h3>
                         <div class="subtotal d-flex">
                             <p>Subtotal</p>
-                            <div class="subtotalPrice">$3333</div>
+                            <div class="subtotalPrice"></div>
                         </div>
                         <div class="shipping d-flex">
                             <p>Shipping</p>
@@ -63,7 +56,7 @@
                         </div>
                         <div class="total">
                             <p>Total</p>
-                            <div class="totalPrice">$3333</div>
+                            <div class="totalPrice">$@(Model.Sum(b => b.Price * b.Count))</div>
                         </div>
                         <div class="buttons">
                             <button id="firstBtn">

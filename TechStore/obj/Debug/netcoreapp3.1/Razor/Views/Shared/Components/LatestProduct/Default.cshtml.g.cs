@@ -89,8 +89,15 @@ using TechStore.ViewModels.SingleV;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\_ViewImports.cshtml"
+using TechStore.ViewModels.WishlistV;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1239ee0b5dca80e0d8a097c13ef8d6d3e606ea7d", @"/Views/Shared/Components/LatestProduct/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"70fb7e08c8d88d9bdc72b27a8b230e7abd41c3dd", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3d3a12d8e920c0dfb4946b4f868d674c24b01704", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_LatestProduct_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Product>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "shop", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -142,7 +149,7 @@ WriteAttributeValue("", 233, item.MainImage, 233, 15, false);
             BeginWriteAttribute("alt", " alt=\"", 249, "\"", 255, 0);
             EndWriteAttribute();
             WriteLiteral(">\r\n        </div>\r\n        <div class=\"col-lg-8 col-xl-8 col-xxl-8 col-md-8 col-sm-8 col-8\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1239ee0b5dca80e0d8a097c13ef8d6d3e606ea7d6624", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1239ee0b5dca80e0d8a097c13ef8d6d3e606ea7d6817", async() => {
 #nullable restore
 #line 11 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\Shared\Components\LatestProduct\Default.cshtml"
                                                                             Write(item.Name);

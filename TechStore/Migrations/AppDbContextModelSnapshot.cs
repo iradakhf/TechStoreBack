@@ -1244,6 +1244,31 @@ namespace TechStore.Migrations
                     b.ToTable("Testimonials");
                 });
 
+            modelBuilder.Entity("TechStore.Models.Wishlist", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Wishlists");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1367,6 +1392,19 @@ namespace TechStore.Migrations
 
             modelBuilder.Entity("TechStore.Models.SpecialOffer", b =>
                 {
+                    b.HasOne("TechStore.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("TechStore.Models.Wishlist", b =>
+                {
+                    b.HasOne("TechStore.Models.AppUser", "AppUser")
+                        .WithMany("Wishlists")
+                        .HasForeignKey("AppUserId");
+
                     b.HasOne("TechStore.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")

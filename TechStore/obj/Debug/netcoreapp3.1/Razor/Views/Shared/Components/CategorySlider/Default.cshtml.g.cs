@@ -89,8 +89,15 @@ using TechStore.ViewModels.SingleV;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\_ViewImports.cshtml"
+using TechStore.ViewModels.WishlistV;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cc79d7979c57867be4b4efe567a660da6ca81cea", @"/Views/Shared/Components/CategorySlider/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"70fb7e08c8d88d9bdc72b27a8b230e7abd41c3dd", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3d3a12d8e920c0dfb4946b4f868d674c24b01704", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_CategorySlider_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<CategorySlider>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("id", new global::Microsoft.AspNetCore.Html.HtmlString("backImage"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -145,7 +152,7 @@ using TechStore.ViewModels.SingleV;
 #line hidden
 #nullable disable
             WriteLiteral("</h2>\r\n        </div>\r\n        <div class=\"col-lg-6 col-xl-6 col-xxl-6 col-3 col-sm-6 col-md-6 d-flex justify-content-end align-content-end\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "cc79d7979c57867be4b4efe567a660da6ca81cea6773", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "cc79d7979c57867be4b4efe567a660da6ca81cea6966", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

@@ -60,6 +60,20 @@ namespace TechStore
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Error/PageNotFound");
+            }
+            app.Use(async (context, next) =>
+            {
+                await next();
+                if (context.Response.StatusCode == 404)
+                {
+                    context.Request.Path = "/Error/PageNotFound";
+                    await next();
+                }
+            });
+           
 
             app.UseRouting();
             app.UseSession();

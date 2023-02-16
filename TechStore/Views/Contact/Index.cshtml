@@ -5,22 +5,13 @@
 
 <!-- main -->
 <main id="contactMain">
-    <div class="breadcrumbGeneral">
-        <div class="container">
-            <ul>
-                <li><a href="index.html"><span>Home</span> <i class="fa-solid fa-arrow-right-long"></i></a></li>
-                <li><a href="shop.html"><span>Shop</span> <i class="fa-solid fa-arrow-right-long"></i></a></li>
-                <li><a href="#"></a><span>Smartphones</span></li>
-            </ul>
-        </div>
-    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-center mapIframe">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7866.698261635076!2d76.36893404541627!3d9.651179823938902!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x93fa22a41aac4d75!2sKanivu+Charitable+Trust!5e0!3m2!1sen!2sin!4v1433709664971" width="1500" height="450" frameborder="0" style="border:0"></iframe>
 
             </div>
-            <div class="col-lg-12 col-sm-12 col-md-12 col-xxl-12 col-xl-12">
+            <div class="col-lg-12 col-sm-12 col-md-12 col-xxl-12 col-xl-12 mb-12">
                 <div class="row align-items-center justify-content-between text-center iconPart">
                     @foreach (var item in Model.Contacts)
                     {
@@ -38,57 +29,7 @@
                     }
                 </div>
             </div>
-            <div class="col-lg-12 col-sm-12 col-md-12 col-xxl-12 col-xl-12 text-center">
-                <div class="LeaveUsMessage">
-                    <div class="col-lg-12 col-xl-12 col-xxl-12">
-                        <h3>Leave us a Message</h3>
-                        <p class="firstP">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it</p>
-                    </div>
-
-                   
-                    @*<form method="post">
-                        <div class="row">
-                            <div class="billingDetail">
-                                <div class="billingDetails row justify-content-center align-items-center">
-                                    <div class="left col-lg-4 col-xxl-4 col-xl-4 col-md-12 col-sm-12 col-12">
-                                        <div class="label">First name *</div>
-                                        <input asp-for="@Model.LeaveUsReplies.FirstOrDefault().Name" type="text" placeholder="Irada">
-                                    </div>
-                                    <div class="right col-lg-4 col-xxl-4 col-xl-4 col-md-12 col-sm-12 col-12">
-                                        <div class="label">Last name *</div>
-                                        <input asp-for="@Model.LeaveUsReplies.FirstOrDefault().Surname" type="text" placeholder="Feyzullayeva">
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="contact row text-center">
-                                <div class="form-group">
-                                    <div class="left col-lg-12">
-                                        <p>Subject </p>
-                                        <input type="text" asp-for="@Model.LeaveUsReplies.FirstOrDefault().Subject">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="right col-lg-12">
-                                        <p>Comment</p>
-                                        <textarea asp-for="@Model.LeaveUsReplies.FirstOrDefault().Comment" cols="30" rows="10"></textarea>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                                
-                                    <a asp-controller="contact" asp-action="index">Send</a>
-                                    
-                            </div>
-                     
-                    </form>*@
-
-
-                    
-                </div>
-            </div>
+          
         </div>
     </div>
 </main>

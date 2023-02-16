@@ -3,16 +3,7 @@
     ViewData["Title"] = "Detail";
 }
 
-<!--bread crumb -->
-<div class="breadcrumbGeneral">
-    <div class="container">
-        <ul>
-            <li><a href="index.html"><span>Home</span> <i class="fa-solid fa-arrow-right-long"></i></a></li>
-            <li><a href="shop.html"><span>Shop</span> <i class="fa-solid fa-arrow-right-long"></i></a></li>
-            <li><a href="#"></a><span>Smartphones</span></li>
-        </ul>
-    </div>
-</div>
+
 <main id="singleProductMain">
     <section id="singleProduct">
         <div class="container">
@@ -121,7 +112,7 @@
                         <div class="addtoCatButtoon row">
                             <button class="col-lg-6 col-xl-6 col-xxl-6 col-sm-6 col-6 col-md-6">
                                 <img src="~/assets/images/cart.png" alt=""><span>
-                                <a class="addtobasket" asp-controller="basket" asp-action="addtobasket" asp-route-id="@Model.ProductSingle.Id" style="color:white">
+                                <a class="addtobasket" asp-controller="basket" asp-action="addtobasket"  asp-route-id="@Model.ProductSingle.Id" style="color:white">
                                 Add To Cart
 
                                 </a>
