@@ -340,7 +340,6 @@ C:\Users\irade\Desktop\TechStoreBack\TechStore\bin\Debug\netcoreapp3.1\runtimes\
 C:\Users\irade\Desktop\TechStoreBack\TechStore\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\irade\Desktop\TechStoreBack\TechStore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\irade\Desktop\TechStoreBack\TechStore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\TechStore.csproj.AssemblyReference.cache
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\TechStore.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\TechStore.AssemblyInfoInputs.cache
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\TechStore.AssemblyInfo.cs
@@ -469,3 +468,4 @@ C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\TechStore
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\TechStore.dll
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\TechStore.pdb
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\TechStore.genruntimeconfig.cache
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Debug\netcoreapp3.1\TechStore.csproj.AssemblyReference.cache
