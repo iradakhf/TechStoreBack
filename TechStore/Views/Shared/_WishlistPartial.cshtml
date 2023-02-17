@@ -15,28 +15,17 @@
             <div class="price">
                 <p>$@item.Price</p>
             </div>
-        </td>
-
-        <td>
-            <div class="row">
-                <div class="col-lg-6 col-xxl-6 col-xl-6 col-6 col-md-6 col-sm-6">
-                    <div class="totalPrice">
-                        $5.225
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xxl-6 col-xl-6 col-6 col-md-6 col-sm-6">
                     <div class="trash">
-                        <a class="deletefromcartbtn" asp-controller="basket" asp-action="DeleteFromCart" asp-route-id="@item.ProductId">
+                        <a asp-controller="wishlist" asp-action="DeleteFromCart" asp-route-id="@item.ProductId">
                             <img src="~/assets/images/delete.png" alt="">
 
                         </a>
 
 
                     </div>
-
-                </div>
-            </div>
         </td>
+
+        
     </tr>
 
 }

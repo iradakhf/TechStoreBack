@@ -25,6 +25,8 @@
     <Compile Remove="Migrations\20230205063753_CreatedAppUserTable.Designer.cs" />
     <Compile Remove="Migrations\20230207083347_CreatedTagTableAndAddedRelationToProductAndTags.cs" />
     <Compile Remove="Migrations\20230207083347_CreatedTagTableAndAddedRelationToProductAndTags.Designer.cs" />
+    <Compile Remove="Migrations\20230217091720_test1.cs" />
+    <Compile Remove="Migrations\20230217091720_test1.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

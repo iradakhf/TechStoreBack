@@ -25,7 +25,7 @@ namespace TechStore.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            string basket = HttpContext.Request.Cookies["basket"];
+            string basket = HttpContext.Request.Cookies["wishlist"];
 
             List<WishlistVM> wishlistVMs = null;
 
@@ -55,7 +55,7 @@ namespace TechStore.Controllers
                 return NotFound();
             }
 
-            string basket = HttpContext.Request.Cookies["basket"];
+            string basket = HttpContext.Request.Cookies["wishlist"];
 
             List<WishlistVM> WishlistVMs = null;
 
@@ -83,52 +83,18 @@ namespace TechStore.Controllers
                 WishlistVMs.Add(WishlistVM);
             }
 
-            if (User.Identity.IsAuthenticated)
-            {
-                AppUser appUser = await _userManager.Users.Include(u => u.Wishlists).FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
-
-                if (appUser.Wishlists != null && appUser.Wishlists.Count() > 0)
-                {
-                    Wishlist dbBasket = appUser.Wishlists.FirstOrDefault(b => b.ProductId == id);
-
-                    if (dbBasket != null)
-                    {
-                        dbBasket.Count += 1;
-                    }
-                    else
-                    {
-                        Wishlist newBasket = new Wishlist
-                        {
-                            ProductId = (int)id,
-                            Count = 1
-                        };
-
-                        appUser.Wishlists.Add(newBasket);
-                    }
-                }
-                else
-                {
-                    List<Wishlist> Wishlists = new List<Wishlist>
-                    {
-                        new Wishlist{ProductId = (int)id, Count = 1}
-                    };
-
-                    appUser.Wishlists = Wishlists;
-                }
-
-                await _context.SaveChangesAsync();
-            }
 
             basket = JsonConvert.SerializeObject(WishlistVMs);
 
-            HttpContext.Response.Cookies.Append("basket", basket);
+            HttpContext.Response.Cookies.Append("wishlist", basket);
 
-            return PartialView("_WishlistPartial", await _getBasketItemAsync(WishlistVMs));
+            return View("Index", await _getBasketItemAsync(WishlistVMs));
         }
+
 
         public async Task<IActionResult> GetBasket()
         {
-            string basket = Request.Cookies["basket"];
+            string basket = Request.Cookies["wishlist"];
 
             List<WishlistVM> WishlistVMs = null;
 
@@ -141,31 +107,6 @@ namespace TechStore.Controllers
                 WishlistVMs = new List<WishlistVM>();
             }
 
-            if (User.Identity.IsAuthenticated)
-            {
-                AppUser appUser = await _userManager.Users.Include(u => u.Wishlists).FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
-
-                if (appUser.Wishlists != null && appUser.Wishlists.Count() > 0)
-                {
-                    foreach (var item in appUser.Wishlists)
-                    {
-                        if (!WishlistVMs.Any(b => b.ProductId == item.ProductId))
-                        {
-                            WishlistVM WishlistVM = new WishlistVM
-                            {
-                                ProductId = item.ProductId,
-                                Count = item.Count
-                            };
-
-                            WishlistVMs.Add(WishlistVM);
-                        }
-                    }
-
-                    basket = JsonConvert.SerializeObject(WishlistVMs);
-
-                    Response.Cookies.Append("basket", basket);
-                }
-            }
 
             return PartialView("_WishlistPartial", await _getBasketItemAsync(WishlistVMs));
         }
@@ -176,7 +117,7 @@ namespace TechStore.Controllers
 
             if (!await _context.Products.AnyAsync(p => p.Id == id)) return NotFound();
 
-            string basket = HttpContext.Request.Cookies["basket"];
+            string basket = HttpContext.Request.Cookies["wishlist"];
 
             if (string.IsNullOrWhiteSpace(basket)) return BadRequest();
 
@@ -189,20 +130,12 @@ namespace TechStore.Controllers
             WishlistVMs.Remove(WishlistVM);
 
             basket = JsonConvert.SerializeObject(WishlistVMs);
-            HttpContext.Response.Cookies.Append("basket", basket);
+            HttpContext.Response.Cookies.Append("wishlist", basket);
 
-            return PartialView("_WishlistPartial", await _getBasketItemAsync(WishlistVMs));
+            return View("Index", await _getBasketItemAsync(WishlistVMs));
         }
         private async Task<List<WishlistVM>> _getBasketItemAsync(List<WishlistVM> WishlistVMs)
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                AppUser appUser = await _userManager.Users.Include(u => u.Wishlists).FirstOrDefaultAsync(u => u.UserName == User.Identity.Name);
-
-
-            }
-
-
             foreach (WishlistVM item in WishlistVMs)
             {
                 Product dbProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == item.ProductId);

@@ -254,3 +254,6 @@ C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Release\netcoreapp3.1\TechSto
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Release\netcoreapp3.1\TechStore.dll
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Release\netcoreapp3.1\TechStore.pdb
 C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Release\netcoreapp3.1\TechStore.genruntimeconfig.cache
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Release\netcoreapp3.1\Razor\Views\Error\PageNotFound.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Release\netcoreapp3.1\Razor\Views\Shared\_WishlistPartial.cshtml.g.cs
+C:\Users\irade\Desktop\TechStoreBack\TechStore\obj\Release\netcoreapp3.1\Razor\Views\Wishlist\Index.cshtml.g.cs

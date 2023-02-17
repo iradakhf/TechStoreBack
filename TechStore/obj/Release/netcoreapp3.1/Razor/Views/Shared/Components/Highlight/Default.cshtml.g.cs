@@ -89,8 +89,15 @@ using TechStore.ViewModels.SingleV;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\_ViewImports.cshtml"
+using TechStore.ViewModels.WishlistV;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"658bbbba2ad1d573bd34799b085c0619a3c7db5f", @"/Views/Shared/Components/Highlight/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"70fb7e08c8d88d9bdc72b27a8b230e7abd41c3dd", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3d3a12d8e920c0dfb4946b4f868d674c24b01704", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_Highlight_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ProductVM>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("alt", new global::Microsoft.AspNetCore.Html.HtmlString(""), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -139,7 +146,7 @@ using TechStore.ViewModels.SingleV;
 #line hidden
 #nullable disable
             WriteLiteral("                <div class=\"box mb-4\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-lg-4 col-xl-4 col-xxl-4 col-md-4 col-sm-4 col-4\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "658bbbba2ad1d573bd34799b085c0619a3c7db5f6795", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "658bbbba2ad1d573bd34799b085c0619a3c7db5f6988", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -163,7 +170,7 @@ AddHtmlAttributeValue("", 610, item.MainImage, 610, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        </div>\r\n                        <div class=\"col-lg-8 col-xl-8 col-xxl-8 col-md-8 col-sm-8 col-8\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "658bbbba2ad1d573bd34799b085c0619a3c7db5f8547", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "658bbbba2ad1d573bd34799b085c0619a3c7db5f8740", async() => {
 #nullable restore
 #line 18 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\Shared\Components\Highlight\Default.cshtml"
                                                                                             Write(item.Name);
@@ -241,7 +248,7 @@ AddHtmlAttributeValue("", 610, item.MainImage, 610, 15, false);
 #line hidden
 #nullable disable
             WriteLiteral("                    <div class=\"box mb-4\">\r\n                        <div class=\"row\">\r\n                            <div class=\"col-lg-4 col-xl-4 col-xxl-4 col-md-4 col-sm-4 col-4\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "658bbbba2ad1d573bd34799b085c0619a3c7db5f13368", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "658bbbba2ad1d573bd34799b085c0619a3c7db5f13561", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -265,7 +272,7 @@ AddHtmlAttributeValue("", 2098, item.MainImage, 2098, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            </div>\r\n                            <div class=\"col-lg-8 col-xl-8 col-xxl-8 col-md-8 col-sm-8 col-8\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "658bbbba2ad1d573bd34799b085c0619a3c7db5f15137", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "658bbbba2ad1d573bd34799b085c0619a3c7db5f15330", async() => {
 #nullable restore
 #line 46 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\Shared\Components\Highlight\Default.cshtml"
                                                                         Write(item.Name);
@@ -328,7 +335,7 @@ AddHtmlAttributeValue("", 2098, item.MainImage, 2098, 15, false);
 #line hidden
 #nullable disable
             WriteLiteral("                    <div class=\"box mb-4\">\r\n                        <div class=\"row\">\r\n                            <div class=\"col-lg-4 col-xl-4 col-xxl-4 col-md-4 col-sm-4 col-4\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "658bbbba2ad1d573bd34799b085c0619a3c7db5f18952", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "658bbbba2ad1d573bd34799b085c0619a3c7db5f19145", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -352,7 +359,7 @@ AddHtmlAttributeValue("", 3625, item.MainImage, 3625, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            </div>\r\n                            <div class=\"col-lg-8 col-xl-8 col-xxl-8 col-md-8 col-sm-8 col-8\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "658bbbba2ad1d573bd34799b085c0619a3c7db5f20721", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "658bbbba2ad1d573bd34799b085c0619a3c7db5f20914", async() => {
 #nullable restore
 #line 74 "C:\Users\irade\Desktop\TechStoreBack\TechStore\Views\Shared\Components\Highlight\Default.cshtml"
                                                                         Write(item.Name);
